@@ -191,6 +191,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="A3x-AK-wRi"/>
+                    <connections>
+                        <outlet property="backButton" destination="A3x-AK-wRi" id="73k-t6-daD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-R9-2Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
