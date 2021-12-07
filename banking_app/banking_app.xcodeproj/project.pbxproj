@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB2275FF5A4009DB036 /* MainViewController.swift */; };
+		C4A26EB5275FF5BB009DB036 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */; };
+		C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */; };
+		C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */; };
+		C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */; };
 		E18411E3275E788300226A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18411E2275E788300226A91 /* AppDelegate.swift */; };
 		E18411E5275E788300226A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18411E4275E788300226A91 /* SceneDelegate.swift */; };
 		E18411E7275E788300226A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18411E6275E788300226A91 /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4A26EB2275FF5A4009DB036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
+		C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
+		C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		E18411DF275E788300226A91 /* banking_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banking_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18411E2275E788300226A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18411E4275E788300226A91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4A26EB0275FF517009DB036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4A26EB1275FF521009DB036 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E18411E6275E788300226A91 /* ViewController.swift */,
+				C4A26EB2275FF5A4009DB036 /* MainViewController.swift */,
+				C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */,
+				C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */,
+				C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */,
+				C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E18411D6275E788300226A91 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +86,10 @@
 		E18411E1275E788300226A91 /* banking_app */ = {
 			isa = PBXGroup;
 			children = (
+				C4A26EB1275FF521009DB036 /* ViewControllers */,
+				C4A26EB0275FF517009DB036 /* Model */,
 				E18411E2275E788300226A91 /* AppDelegate.swift */,
 				E18411E4275E788300226A91 /* SceneDelegate.swift */,
-				E18411E6275E788300226A91 /* ViewController.swift */,
 				E18411E8275E788300226A91 /* Main.storyboard */,
 				E18411EB275E788800226A91 /* Assets.xcassets */,
 				E18411ED275E788800226A91 /* LaunchScreen.storyboard */,
@@ -141,6 +172,11 @@
 				E18411E7275E788300226A91 /* ViewController.swift in Sources */,
 				E18411E3275E788300226A91 /* AppDelegate.swift in Sources */,
 				E18411E5275E788300226A91 /* SceneDelegate.swift in Sources */,
+				C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */,
+				C4A26EB5275FF5BB009DB036 /* SettingsViewController.swift in Sources */,
+				C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */,
+				C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */,
+				C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

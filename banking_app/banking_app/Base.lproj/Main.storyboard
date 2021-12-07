@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KGi-W7-gcE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkK-tm-AQg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="yNv-ke-x8V">
             <objects>
-                <viewController id="KGi-W7-gcE" sceneMemberID="viewController">
+                <viewController id="KGi-W7-gcE" customClass="SignInViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="saq-yn-xjl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,12 +45,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7f1-Zj-YYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81" y="-348"/>
+            <point key="canvasLocation" x="474" y="-348"/>
         </scene>
-        <!--View Controller-->
+        <!--Transfers View Controller-->
         <scene sceneID="cqJ-ep-Wy3">
             <objects>
-                <viewController id="lVc-KB-fXD" sceneMemberID="viewController">
+                <viewController id="lVc-KB-fXD" customClass="TransfersViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nve-XH-ssa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,17 +72,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0P4-1y-lLD" kind="relationship" relationship="rootViewController" id="kmR-hh-uRe"/>
+                        <segue destination="KGi-W7-gcE" kind="relationship" relationship="rootViewController" id="Rem-u2-GhY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYU-KR-5h1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="-348"/>
+            <point key="canvasLocation" x="-654" y="-348"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="TkB-Yt-0A7">
             <objects>
-                <viewController id="0P4-1y-lLD" sceneMemberID="viewController">
+                <viewController id="0P4-1y-lLD" customClass="MainViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDV-Sz-2AH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0P4-1y-lLD" id="190-4h-aOh"/>
+                                    <outlet property="delegate" destination="0P4-1y-lLD" id="Nhj-cf-fwD"/>
+                                </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-gd-tz2">
                                 <rect key="frame" x="15" y="424" width="379" height="209"/>
@@ -152,6 +156,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0P4-1y-lLD" id="Az6-OD-2OF"/>
+                                    <outlet property="delegate" destination="0P4-1y-lLD" id="rmK-7Y-mWc"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6a-u0-4bR">
                                 <rect key="frame" x="20" y="108" width="72" height="21"/>
@@ -188,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1624.6376811594205" y="-349.55357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="sEw-nr-adb">
             <objects>
-                <viewController id="2cx-0W-pna" sceneMemberID="viewController">
+                <viewController id="2cx-0W-pna" customClass="SettingsViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2s-ot-YCF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,9 +249,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="KGi-W7-gcE" kind="custom" id="YAs-Dn-A4u"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iwW-Tc-5dt"/>
@@ -255,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="2521.739130434783" y="-1026.5625"/>
         </scene>
-        <!--View Controller-->
+        <!--Investments View Controller-->
         <scene sceneID="OKN-Wx-cJq">
             <objects>
-                <viewController id="tMk-l2-Hev" sceneMemberID="viewController">
+                <viewController id="tMk-l2-Hev" customClass="InvestmentsViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZXd-MW-9CZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="2524" y="-347"/>
         </scene>
-        <!--View Controller-->
+        <!--Wallet View Controller-->
         <scene sceneID="XAJ-Xh-hM9">
             <objects>
-                <viewController id="QjW-7w-Bom" sceneMemberID="viewController">
+                <viewController id="QjW-7w-Bom" customClass="WalletViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qed-zL-5Gp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,9 +293,6 @@
             <point key="canvasLocation" x="2448" y="396"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="kmR-hh-uRe"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
