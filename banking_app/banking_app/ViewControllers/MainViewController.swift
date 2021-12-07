@@ -9,14 +9,12 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    //@IBOutlet weak var backButton: UINavigationItem!
+    @IBOutlet weak var backButton: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let backButton = UIBarButtonItem()
-        backButton.title = "Log Out"
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        backButton.backButtonTitle = "Log Out"
+        backButton.backBarButtonItem?.title = "Log Out"
         // Do any additional setup after loading the view.
     }
     
