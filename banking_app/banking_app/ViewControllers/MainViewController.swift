@@ -13,8 +13,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButton.backButtonTitle = "Log Out"
-        backButton.backBarButtonItem?.title = "Log Out"
         // Do any additional setup after loading the view.
     }
     
