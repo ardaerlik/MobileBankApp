@@ -162,6 +162,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="diB-fo-K9K" kind="show" id="NIB-WJ-OKb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -181,6 +184,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="379" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="a7n-b7-Uru" kind="show" id="tnr-iD-XaN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -222,6 +228,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-R9-2Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1624.6376811594205" y="-349.55357142857139"/>
+        </scene>
+        <!--Account Detail View Controller-->
+        <scene sceneID="raO-IZ-FHc">
+            <objects>
+                <viewController id="diB-fo-K9K" customClass="AccountDetailViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B1I-ab-gaR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mBH-EN-ghD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4rr-mO-eEi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDK-A5-CLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="-1060"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="gh6-mn-aEj">
+            <objects>
+                <viewController id="a7n-b7-Uru" customClass="CardDetailViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="axD-y3-Lj6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LyA-Sn-ILL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g7T-nG-6YJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2r-VV-9qg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="-1060"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="sEw-nr-adb">

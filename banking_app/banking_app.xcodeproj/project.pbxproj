@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */; };
+		C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */; };
 		C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB2275FF5A4009DB036 /* MainViewController.swift */; };
 		C4A26EB5275FF5BB009DB036 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */; };
 		C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
 		C4A26EB2275FF5A4009DB036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */,
 				C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */,
 				C4A26EBC276002F6009DB036 /* InvestmentsDetailViewController.swift */,
+				C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */,
+				C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,8 +183,10 @@
 				E18411E5275E788300226A91 /* SceneDelegate.swift in Sources */,
 				C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */,
 				C4A26EB5275FF5BB009DB036 /* SettingsViewController.swift in Sources */,
+				C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */,
 				C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */,
 				C4A26EBD276002F7009DB036 /* InvestmentsDetailViewController.swift in Sources */,
+				C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */,
 				C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */,
 				C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */,
 			);
