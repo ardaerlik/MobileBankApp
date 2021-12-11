@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var backButton: UINavigationItem!
+    var collRefCards: CollectionReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        collRefCards = Firestore.firestore().collection("cards")
+        print(collRefCards.document("Card1"))
     }
     
 
