@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 class CardsDataSource {
-    private var cardList: [Account] = []
+    private var cardList: [Card] = []
     private var cardIdList: [String] = []
     private var tckn: String = ""
     
@@ -21,13 +21,22 @@ class CardsDataSource {
     }
     
     func getData() {
-        let cardsCollReference = Firestore.firestore().collection("cards")
         let userDocReference = Firestore.firestore().document("users/\(tckn)")
         userDocReference.getDocument { [self] (docSnapshot, error) in
-            guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
-            let myData = docSnapshot.data()
+            let myData = docSnapshot!.data()
             self.cardIdList = myData?["Cards"] as? [String] ?? self.cardIdList
             
+        }
+        
+        for i in 0...cardIdList.count {
+            let accountDocReference = Firestore.firestore().document("accounts/\(cardIdList[i])")
+            accountDocReference.getDocument { [self] (docSnapshot, error) in
+                let myData = docSnapshot!.data()
+                self.cardList[i].Issuer = myData?["Issuer"] as! String
+                self.cardList[i].RLimit = myData?["RLimit"] as! Int
+                self.cardList[i].TLimit = myData?["TLimit"] as! Int
+                // "Date"???
+            }
         }
     }
     

@@ -10,7 +10,7 @@ import Firebase
 
 class MainViewController: UIViewController {
     
-    let tckn = ""
+    var tckn: String = ""
     let accountsDataSource = AccountsDataSource()
     let cardsDataSource = CardsDataSource()
     
@@ -20,7 +20,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print(tckn)
         
+        accountsDataSource.setTckn(tckn: tckn)
+        cardsDataSource.setTckn(tckn: tckn)
+        
+        accountsDataSource.getData()
+        cardsDataSource.getData()
     }
     
 

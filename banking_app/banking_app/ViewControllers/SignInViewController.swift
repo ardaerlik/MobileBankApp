@@ -10,6 +10,7 @@ import Firebase
 
 class SignInViewController: UIViewController {
 
+    var tcknValue: String = ""
     @IBOutlet weak var tckn: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -25,17 +26,21 @@ class SignInViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = "Log Out"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        let mainViewController = segue.destination as! MainViewController
+        mainViewController.tckn = tcknValue
     }
 
     @IBAction func signIn(_ sender: Any) {
-        let tcknText = tckn.text
-        let passwordText = password.text
-        let  dataToSave: [String: Any] = ["tckn": tcknText, "password": passwordText]
-        docRef.setData(dataToSave) { (error) in
-            if let error = error {
-                print("error")
-            }
-        }
+        tcknValue = tckn.text!
+//        let tcknText = tckn.text
+//        let passwordText = password.text
+//        let  dataToSave: [String: Any] = ["tckn": tcknText, "password": passwordText]
+//        docRef.setData(dataToSave) { (error) in
+//            if let error = error {
+//                print("error")
+//            }
+//        }
     }
     
 }

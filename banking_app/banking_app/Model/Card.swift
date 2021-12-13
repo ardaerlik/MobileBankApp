@@ -8,8 +8,8 @@
 import Foundation
 
 struct Card {
-    let DuePay: Date
-    let Issuer: String
-    let RLimit: Int
-    let TLimit: Int
+    var DuePay: Date
+    var Issuer: String
+    var RLimit: Int
+    var TLimit: Int
 }
