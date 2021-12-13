@@ -21,21 +21,24 @@ class AccountsDataSource {
     }
     
     func getData() {
-        let userDocReference = Firestore.firestore().document("users/\(tckn)")
+        let userDocReference = Firestore.firestore().collection("users").document("\(tckn)")
         userDocReference.getDocument { [self] (docSnapshot, error) in
-//            guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
             let myData = docSnapshot!.data()
-            self.accountIdList = myData?["Accounts"] as! [String]
+            self.accountIdList = myData?["accounts"] as! [String]
         }
         
+        print(accountIdList)
+        
         for i in 0...accountIdList.count {
-            let accountDocReference = Firestore.firestore().document("accounts/\(accountIdList[i])")
+            let accountDocReference = Firestore.firestore().collection("accounts").document("\(accountIdList[i])")
             accountDocReference.getDocument { [self] (docSnapshot, error) in
                 let myData = docSnapshot!.data()
                 self.accountList[i].Amount = myData?["Amount"] as! Int
                 self.accountList[i].Currency = myData?["Currency"] as! String
             }
         }
+        
+        print(accountList)
     }
     
     func getNumberOfAccounts() -> Int {

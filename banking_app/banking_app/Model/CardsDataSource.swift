@@ -21,15 +21,16 @@ class CardsDataSource {
     }
     
     func getData() {
-        let userDocReference = Firestore.firestore().document("users/\(tckn)")
+        let userDocReference = Firestore.firestore().collection("users").document("\(tckn)")
         userDocReference.getDocument { [self] (docSnapshot, error) in
             let myData = docSnapshot!.data()
             self.cardIdList = myData?["Cards"] as? [String] ?? self.cardIdList
             
         }
+        print(cardIdList)
         
         for i in 0...cardIdList.count {
-            let accountDocReference = Firestore.firestore().document("accounts/\(cardIdList[i])")
+            let accountDocReference = Firestore.firestore().collection("cards").document("\(cardIdList[i])")
             accountDocReference.getDocument { [self] (docSnapshot, error) in
                 let myData = docSnapshot!.data()
                 self.cardList[i].Issuer = myData?["Issuer"] as! String
@@ -38,6 +39,8 @@ class CardsDataSource {
                 // "Date"???
             }
         }
+        
+        print(cardList)
     }
     
     func getNumberOfCards() -> Int {

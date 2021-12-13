@@ -33,6 +33,7 @@ class SignInViewController: UIViewController {
 
     @IBAction func signIn(_ sender: Any) {
         tcknValue = tckn.text!
+        print(tcknValue)
 //        let tcknText = tckn.text
 //        let passwordText = password.text
 //        let  dataToSave: [String: Any] = ["tckn": tcknText, "password": passwordText]
