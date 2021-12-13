@@ -150,14 +150,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="9zH-wC-vfl" customClass="AccountsTableViewCell" customModule="banking_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountCell" rowHeight="150" id="9zH-wC-vfl" customClass="AccountsTableViewCell" customModule="banking_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="378" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9zH-wC-vfl" id="fHX-Pc-pzt">
                                             <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBS-cn-oAu">
+                                                    <rect key="frame" x="20" y="64" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RBS-cn-oAu" firstAttribute="centerX" secondItem="fHX-Pc-pzt" secondAttribute="centerX" id="lWh-D4-4ba"/>
+                                                <constraint firstItem="RBS-cn-oAu" firstAttribute="centerY" secondItem="fHX-Pc-pzt" secondAttribute="centerY" id="pQf-EH-UII"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="amountLabel" destination="RBS-cn-oAu" id="3Bh-7u-wkE"/>
                                             <segue destination="diB-fo-K9K" kind="show" id="NIB-WJ-OKb"/>
                                         </connections>
                                     </tableViewCell>
@@ -172,14 +185,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="165" id="6S6-iW-h00" customClass="CardsTableViewCell" customModule="banking_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="165" id="6S6-iW-h00" customClass="CardsTableViewCell" customModule="banking_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="379" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6S6-iW-h00" id="kCL-3v-7pZ">
                                             <rect key="frame" x="0.0" y="0.0" width="379" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDi-2g-5RK">
+                                                    <rect key="frame" x="20" y="72" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TDi-2g-5RK" firstAttribute="centerX" secondItem="kCL-3v-7pZ" secondAttribute="centerX" id="F1b-OF-3mz"/>
+                                                <constraint firstItem="TDi-2g-5RK" firstAttribute="centerY" secondItem="kCL-3v-7pZ" secondAttribute="centerY" id="VAq-Je-pR1"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="rLimitLabel" destination="TDi-2g-5RK" id="coe-P2-lqJ"/>
                                             <segue destination="a7n-b7-Uru" kind="show" id="tnr-iD-XaN"/>
                                         </connections>
                                     </tableViewCell>
@@ -231,6 +257,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="A3x-AK-wRi"/>
+                    <connections>
+                        <outlet property="accountsTableView" destination="YPS-JN-Nx1" id="ZeS-Ps-Sri"/>
+                        <outlet property="cardsTableView" destination="GXb-gd-tz2" id="S0M-MD-xAK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-R9-2Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

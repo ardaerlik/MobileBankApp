@@ -9,6 +9,7 @@ import UIKit
 
 class AccountsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var amountLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

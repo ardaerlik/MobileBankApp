@@ -9,6 +9,7 @@ import UIKit
 
 class CardsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rLimitLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
