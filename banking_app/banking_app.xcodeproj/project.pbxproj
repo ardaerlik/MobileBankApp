@@ -17,7 +17,7 @@
 		C431E1562760DBF700A18D31 /* InvestmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1552760DBF700A18D31 /* InvestmentsTableViewCell.swift */; };
 		C431E1582760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */; };
 		C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */; };
-		C45BEA922768C4BC00A77542 /* AccountsDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BEA912768C4BB00A77542 /* AccountsDataSourceDelegate.swift */; };
+		C45BEA922768C4BC00A77542 /* FirebaseDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */; };
 		C486177727677162000A9DCE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177627677161000A9DCE /* Card.swift */; };
 		C486177927677180000A9DCE /* CardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177827677180000A9DCE /* CardsDataSource.swift */; };
 		C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB2275FF5A4009DB036 /* MainViewController.swift */; };
@@ -48,7 +48,7 @@
 		C431E1552760DBF700A18D31 /* InvestmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersTableViewCell.swift; sourceTree = "<group>"; };
-		C45BEA912768C4BB00A77542 /* AccountsDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsDataSourceDelegate.swift; sourceTree = "<group>"; };
+		C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataSourceDelegate.swift; sourceTree = "<group>"; };
 		C486177627677161000A9DCE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C486177827677180000A9DCE /* CardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSource.swift; sourceTree = "<group>"; };
 		C4A26EB2275FF5A4009DB036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				C40CD91A2764D16C0061BB09 /* Account.swift */,
 				C486177627677161000A9DCE /* Card.swift */,
 				C486177827677180000A9DCE /* CardsDataSource.swift */,
-				C45BEA912768C4BB00A77542 /* AccountsDataSourceDelegate.swift */,
+				C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				C486177927677180000A9DCE /* CardsDataSource.swift in Sources */,
 				C431E1522760DBC900A18D31 /* AccountsTableViewCell.swift in Sources */,
 				C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */,
-				C45BEA922768C4BC00A77542 /* AccountsDataSourceDelegate.swift in Sources */,
+				C45BEA922768C4BC00A77542 /* FirebaseDataSourceDelegate.swift in Sources */,
 				C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */,
 				C4A26EBD276002F7009DB036 /* InvestmentsDetailViewController.swift in Sources */,
 				C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */,

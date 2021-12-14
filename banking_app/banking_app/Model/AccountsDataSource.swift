@@ -14,7 +14,7 @@ class AccountsDataSource {
     private var accountList: [Account] = []
     private var accountIdList: [String] = []
     private var db: Firestore!
-    var delegate: AccountsDataSourceDelegate?
+    var delegate: FirebaseDataSourceDelegate?
     
     init() {
         let settings = FirestoreSettings()
@@ -39,12 +39,13 @@ class AccountsDataSource {
                             let accountData = document.data()
                             let account = Account(Amount: accountData!["Amount"] as! Int, Currency: accountData!["Currency"] as! String)
                             self.accountList.append(account)
+                            
+                            if (self.accountList.count == self.accountIdList.count) {
+                                self.delegate?.accountListLoaded()
+                            }
                         }
                     }
                 }
-                
-                print("Deneme: \(self.accountList[0].Currency)  \(self.accountList[0].Amount)")
-                self.delegate?.accountListLoaded()
             } else {
                 print("Data does not exist")
             }

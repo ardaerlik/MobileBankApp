@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AccountsDataSourceDelegate {
+protocol FirebaseDataSourceDelegate {
     func accountListLoaded()
 }

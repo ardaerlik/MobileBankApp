@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
 
 }
 
-extension MainViewController: AccountsDataSourceDelegate {
+extension MainViewController: FirebaseDataSourceDelegate {
     func accountListLoaded() {
         accountsTableView.reloadData()
     }
