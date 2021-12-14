@@ -12,4 +12,7 @@ class UserDataSource {
     init() {
     }
     
+    func getData(tckn: String) {
+        
+    }
 }

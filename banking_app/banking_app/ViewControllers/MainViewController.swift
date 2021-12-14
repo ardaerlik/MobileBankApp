@@ -51,6 +51,7 @@ extension MainViewController: FirebaseDataSourceDelegate {
     
 }
 
+// MARK: burasi degisecek (TV -> CV)
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.accountsTableView == tableView) {
