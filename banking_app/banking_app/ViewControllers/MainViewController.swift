@@ -9,22 +9,21 @@ import UIKit
 import Firebase
 
 class MainViewController: UIViewController {
-    
-    var tckn: String = ""
     let accountsDataSource = AccountsDataSource()
     let cardsDataSource = CardsDataSource()
+    var tckn: String = ""
     
     @IBOutlet weak var accountsTableView: UITableView!
     @IBOutlet weak var cardsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         print("tckn in MainViewController: \(tckn)")
         
         accountsDataSource.delegate = self
-        accountsDataSource.getDataDeneme(tckn: "yyapH8wvhm6XQjWv9Bzk")
-        //cardsDataSource.getData()
+        cardsDataSource.delegate = self
+        accountsDataSource.getData(tckn: "yyapH8wvhm6XQjWv9Bzk")
+        cardsDataSource.getData(tckn: "yyapH8wvhm6XQjWv9Bzk")
     }
     
 
@@ -41,6 +40,10 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: FirebaseDataSourceDelegate {
+    func cardListLoaded() {
+        cardsTableView.reloadData()
+    }
+    
     func accountListLoaded() {
         accountsTableView.reloadData()
     }

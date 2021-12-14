@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Firebase
 
 struct Card {
-    var DuePay: Date
+    var DuePay: Timestamp
     var Issuer: String
     var RLimit: Int
     var TLimit: Int

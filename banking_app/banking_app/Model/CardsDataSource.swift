@@ -11,36 +11,50 @@ import Firebase
 class CardsDataSource {
     private var cardList: [Card] = []
     private var cardIdList: [String] = []
-    private var tckn: String = ""
+    private var db: Firestore!
+    var delegate: FirebaseDataSourceDelegate?
     
     init() {
-    }
-    
-    func setTckn(tckn: String) {
-        self.tckn = tckn
-    }
-    
-    func getData() {
-        let userDocReference = Firestore.firestore().collection("users").document("\(tckn)")
-        userDocReference.getDocument { [self] (docSnapshot, error) in
-            let myData = docSnapshot!.data()
-            self.cardIdList = myData?["Cards"] as? [String] ?? self.cardIdList
-            
-        }
-        print(cardIdList)
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
         
-        for i in 0...cardIdList.count {
-            let accountDocReference = Firestore.firestore().collection("cards").document("\(cardIdList[i])")
-            accountDocReference.getDocument { [self] (docSnapshot, error) in
-                let myData = docSnapshot!.data()
-                self.cardList[i].Issuer = myData?["Issuer"] as! String
-                self.cardList[i].RLimit = myData?["RLimit"] as! Int
-                self.cardList[i].TLimit = myData?["TLimit"] as! Int
-                // "Date"???
+        db = Firestore.firestore()
+    }
+    
+    func getData(tckn: String) {
+        let userDocReference = db.collection("users").document("\(tckn)")
+        
+        userDocReference.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let userData = document.data()
+                self.cardIdList = userData!["cards"] as! [String]
+                
+                for i in 0...(self.cardIdList.count - 1) {
+                    let cardDocReference = self.db.collection("cards").document("\(self.cardIdList[i])")
+                    
+                    cardDocReference.getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            let cardData = document.data()
+                            let card: Card
+                            
+                            card.RLimit = cardData!["RLimit"] as! Int
+                            card.TLimit = cardData!["TLimit"] as! Int
+                            card.Issuer = cardData!["Issuer"] as! String
+                            card.DuePay = cardData!["DuePay"] as! Timestamp
+                            self.cardList.append(card)
+                            
+                            if (self.cardList.count == self.cardIdList.count) {
+                                self.delegate?.cardListLoaded()
+                            }
+                        } else {
+                            print("Data does not exist")
+                        }
+                    }
+                }
+            } else {
+                print("Data does not exist")
             }
         }
-        
-        print(cardList)
     }
     
     func getNumberOfCards() -> Int {

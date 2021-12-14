@@ -9,4 +9,5 @@ import Foundation
 
 protocol FirebaseDataSourceDelegate {
     func accountListLoaded()
+    func cardListLoaded()
 }

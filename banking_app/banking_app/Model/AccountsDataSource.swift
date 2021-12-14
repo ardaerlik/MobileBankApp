@@ -7,8 +7,6 @@
 
 import Foundation
 import Firebase
-import FirebaseCore
-import FirebaseFirestore
 
 class AccountsDataSource {
     private var accountList: [Account] = []
@@ -23,7 +21,7 @@ class AccountsDataSource {
         db = Firestore.firestore()
     }
     
-    func getDataDeneme(tckn: String) {
+    func getData(tckn: String) {
         let userDocReference = db.collection("users").document("\(tckn)")
 
         userDocReference.getDocument { (document, error) in
@@ -43,6 +41,8 @@ class AccountsDataSource {
                             if (self.accountList.count == self.accountIdList.count) {
                                 self.delegate?.accountListLoaded()
                             }
+                        } else {
+                            print("Data does not exist")
                         }
                     }
                 }
