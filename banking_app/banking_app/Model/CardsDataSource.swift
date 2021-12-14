@@ -35,12 +35,7 @@ class CardsDataSource {
                     cardDocReference.getDocument { (document, error) in
                         if let document = document, document.exists {
                             let cardData = document.data()
-                            let card: Card
-                            
-                            card.RLimit = cardData!["RLimit"] as! Int
-                            card.TLimit = cardData!["TLimit"] as! Int
-                            card.Issuer = cardData!["Issuer"] as! String
-                            card.DuePay = cardData!["DuePay"] as! Timestamp
+                            let card = Card(DuePay: cardData!["DuePay"] as! Timestamp, Issuer: cardData!["Issuer"] as! String, RLimit: cardData!["RLimit"] as! Int, TLimit:  cardData!["TLimit"] as! Int)
                             self.cardList.append(card)
                             
                             if (self.cardList.count == self.cardIdList.count) {
