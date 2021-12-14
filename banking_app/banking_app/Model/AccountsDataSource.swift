@@ -13,7 +13,8 @@ import FirebaseFirestore
 class AccountsDataSource {
     private var accountList: [Account] = []
     private var accountIdList: [String] = []
-    var db: Firestore!
+    private var db: Firestore!
+    var delegate: AccountsDataSourceDelegate?
     
     init() {
         let settings = FirestoreSettings()
@@ -41,32 +42,14 @@ class AccountsDataSource {
                         }
                     }
                 }
+                
+                print("Deneme: \(self.accountList[0].Currency)  \(self.accountList[0].Amount)")
+                self.delegate?.accountListLoaded()
             } else {
                 print("Data does not exist")
             }
         }
     }
-    
-//    func getData() {
-//        let userDocReference = db.collection("users").document("\(tckn)")
-//        userDocReference.getDocument { [self] (docSnapshot, error) in
-//            let myData = docSnapshot!.data()
-//            self.accountIdList = myData?["accounts"] as! [String]
-//        }
-//
-//        print(accountIdList)
-//
-//        for i in 0...accountIdList.count {
-//            let accountDocReference = Firestore.firestore().collection("accounts").document("\(accountIdList[i])")
-//            accountDocReference.getDocument { [self] (docSnapshot, error) in
-//                let myData = docSnapshot!.data()
-//                self.accountList[i].Amount = myData?["Amount"] as! Int
-//                self.accountList[i].Currency = myData?["Currency"] as! String
-//            }
-//        }
-//
-//        print(accountList)
-//    }
     
     func getNumberOfAccounts() -> Int {
         return accountList.count

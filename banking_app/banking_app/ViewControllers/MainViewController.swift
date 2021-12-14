@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("tckn in MainViewController: \(tckn)")
         
+        accountsDataSource.delegate = self
         accountsDataSource.getDataDeneme(tckn: "yyapH8wvhm6XQjWv9Bzk")
         //cardsDataSource.getData()
     }
@@ -37,6 +38,14 @@ class MainViewController: UIViewController {
     }
     */
 
+}
+
+extension MainViewController: AccountsDataSourceDelegate {
+    func accountListLoaded() {
+        accountsTableView.reloadData()
+    }
+    
+    
 }
 
 extension MainViewController: UITableViewDataSource {
