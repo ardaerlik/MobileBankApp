@@ -28,20 +28,12 @@ class SignInViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         let mainViewController = segue.destination as! MainViewController
-        mainViewController.tckn = tcknValue
+        print("tckn in SignInViewController: \(tcknValue)")
+        mainViewController.tckn = "\(tcknValue)"
     }
 
     @IBAction func signIn(_ sender: Any) {
-        tcknValue = tckn.text!
-        print(tcknValue)
-//        let tcknText = tckn.text
-//        let passwordText = password.text
-//        let  dataToSave: [String: Any] = ["tckn": tcknText, "password": passwordText]
-//        docRef.setData(dataToSave) { (error) in
-//            if let error = error {
-//                print("error")
-//            }
-//        }
+        tcknValue = "\(tckn.text!)"
     }
     
 }

@@ -20,13 +20,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(tckn)
+        print("tckn in MainViewController: \(tckn)")
         
-        accountsDataSource.setTckn(tckn: tckn)
-        cardsDataSource.setTckn(tckn: tckn)
-        
-        accountsDataSource.getData()
-        cardsDataSource.getData()
+        accountsDataSource.getDataDeneme(tckn: "yyapH8wvhm6XQjWv9Bzk")
+        //cardsDataSource.getData()
     }
     
 
