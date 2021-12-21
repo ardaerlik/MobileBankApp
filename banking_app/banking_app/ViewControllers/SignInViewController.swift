@@ -9,32 +9,47 @@ import UIKit
 import Firebase
 
 class SignInViewController: UIViewController {
-
-    var tcknValue: String = ""
-    @IBOutlet weak var tckn: UITextField!
-    @IBOutlet weak var password: UITextField!
     
-    var docRef: DocumentReference!
+    @IBOutlet private weak var tckn: UITextField!
+    @IBOutlet private weak var password: UITextField!
+    @IBOutlet private weak var errorLabel: UILabel!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        errorLabel.isHidden = true
+        errorLabel.textColor = .red
+        tckn.delegate = self
+        password.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        docRef = Firestore.firestore().document("users/ji25LVcewBlWglUtnlGs")
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backButton = UIBarButtonItem()
-        backButton.title = "Log Out"
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        
-        let mainViewController = segue.destination as! MainViewController
-        print("tckn in SignInViewController: \(tcknValue)")
-        mainViewController.tckn = "\(tcknValue)"
-    }
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let mainViewController = segue.destination as! MainViewController
+//        main
+//    }
+    
     @IBAction func signIn(_ sender: Any) {
-        tcknValue = "\(tckn.text!)"
+        NetworkManager.shared.getUserData(with: LoginModel(tckn: tckn.text, password: password.text)) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let user):
+                AppSingleton.shared.userModel = user
+                self.performSegue(withIdentifier: "showMainViewController", sender: nil)
+            case .failure(let errorType):
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = errorType.rawValue
+            }
+        }
     }
-    
 }
 
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        errorLabel.isHidden = true
+    }
+}
