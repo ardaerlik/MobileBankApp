@@ -35,6 +35,10 @@ class MainViewController: UIViewController {
             guard let object = sender as? CardModel else { return }
             let detailViewController = segue.destination as! CardDetailViewController
             detailViewController.cardModel = object
+        } else if segue.identifier == "showAccountDetail" {
+            guard let object = sender as? AccountModel else { return }
+            let detailViewController = segue.destination as! AccountDetailViewController
+            detailViewController.accountModel = object
         }
     }
 }

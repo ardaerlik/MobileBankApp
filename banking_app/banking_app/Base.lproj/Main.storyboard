@@ -360,7 +360,7 @@
                                             <outlet property="accountNumberLabel" destination="yzM-1o-Dld" id="NCa-nv-B6E"/>
                                             <outlet property="accountTypeImageView" destination="l4D-b6-mqJ" id="Gds-cO-XTJ"/>
                                             <outlet property="usableAmountLabel" destination="bmI-y8-I0G" id="hBQ-CZ-uyl"/>
-                                            <segue destination="diB-fo-K9K" kind="show" id="o4o-EA-zNL"/>
+                                            <segue destination="diB-fo-K9K" kind="show" identifier="showAccountDetail" id="o4o-EA-zNL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
