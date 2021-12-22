@@ -453,6 +453,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4rr-mO-eEi"/>
+                    <connections>
+                        <outlet property="accountNumberLabel" destination="FFj-Qb-OHd" id="iqq-ta-E6u"/>
+                        <outlet property="accountTypeImageView" destination="nGf-bS-4Ri" id="sOa-V1-Qdy"/>
+                        <outlet property="usableAmountLabel" destination="TBi-fm-7ym" id="Lrf-cX-H9v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDK-A5-CLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
