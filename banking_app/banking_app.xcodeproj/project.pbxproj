@@ -25,7 +25,6 @@
 		C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */; };
 		C45BEA922768C4BC00A77542 /* FirebaseDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */; };
 		C4644EE5276926A1002C17B9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4644EE4276926A1002C17B9 /* UserModel.swift */; };
-		C4644EE7276926B3002C17B9 /* UsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4644EE6276926B3002C17B9 /* UsersDataSource.swift */; };
 		C479337A27735628004B90BF /* ForexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479337927735627004B90BF /* ForexModel.swift */; };
 		C479337C2773565B004B90BF /* FundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479337B2773565A004B90BF /* FundModel.swift */; };
 		C479337E2773567B004B90BF /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479337D2773567B004B90BF /* StockModel.swift */; };
@@ -68,7 +67,6 @@
 		C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersTableViewCell.swift; sourceTree = "<group>"; };
 		C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataSourceDelegate.swift; sourceTree = "<group>"; };
 		C4644EE4276926A1002C17B9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		C4644EE6276926B3002C17B9 /* UsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataSource.swift; sourceTree = "<group>"; };
 		C479337927735627004B90BF /* ForexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexModel.swift; sourceTree = "<group>"; };
 		C479337B2773565A004B90BF /* FundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundModel.swift; sourceTree = "<group>"; };
 		C479337D2773567B004B90BF /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				C486177827677180000A9DCE /* CardsDataSource.swift */,
 				C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */,
 				C4644EE4276926A1002C17B9 /* UserModel.swift */,
-				C4644EE6276926B3002C17B9 /* UsersDataSource.swift */,
 				634852F2276B90CE00E2FA1F /* LoginModel.swift */,
 				63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */,
 				C479337927735627004B90BF /* ForexModel.swift */,
@@ -356,7 +353,6 @@
 				C486177927677180000A9DCE /* CardsDataSource.swift in Sources */,
 				634852F3276B90CE00E2FA1F /* LoginModel.swift in Sources */,
 				C4644EE5276926A1002C17B9 /* UserModel.swift in Sources */,
-				C4644EE7276926B3002C17B9 /* UsersDataSource.swift in Sources */,
 				634852F1276B902E00E2FA1F /* NetworkManager.swift in Sources */,
 				C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */,
 				C479337A27735628004B90BF /* ForexModel.swift in Sources */,

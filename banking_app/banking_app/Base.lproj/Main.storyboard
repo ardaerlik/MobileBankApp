@@ -394,6 +394,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Sign Out" id="muC-04-xxR"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="accountsCollectionView" destination="eUE-wi-4ec" id="LHe-bp-7kx"/>
                         <outlet property="cardsCollectionView" destination="qhG-sC-aQL" id="FN3-3U-Zwt"/>
                         <segue destination="a7n-b7-Uru" kind="show" identifier="showCardDetail" id="RGh-kd-YN8"/>
                     </connections>
