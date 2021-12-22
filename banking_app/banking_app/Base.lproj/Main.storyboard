@@ -305,6 +305,69 @@
                                     <outlet property="delegate" destination="0P4-1y-lLD" id="505-z4-1Fx"/>
                                 </connections>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eUE-wi-4ec" userLabel="Accounts Collection View">
+                                <rect key="frame" x="20" y="136" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dRU-OS-Elo">
+                                    <size key="itemSize" width="219" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AccountsCollectionViewCell" id="NbE-DU-d50" userLabel="AccountsCollectionViewCell" customClass="AccountsCollectionViewCell" customModule="banking_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kgB-Oa-tn7">
+                                            <rect key="frame" x="0.0" y="0.0" width="219" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l4D-b6-mqJ" userLabel="Account Type Image View">
+                                                    <rect key="frame" x="8" y="8" width="80" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="Hms-SA-Kdy"/>
+                                                        <constraint firstAttribute="width" constant="80" id="qR4-SK-stN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmI-y8-I0G" userLabel="Usable Amount Label">
+                                                    <rect key="frame" x="8" y="59" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-1o-Dld" userLabel="Account Number Label">
+                                                    <rect key="frame" x="8" y="88" width="203" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="yzM-1o-Dld" firstAttribute="leading" secondItem="kgB-Oa-tn7" secondAttribute="leading" constant="8" id="3Ya-jF-hsZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="bmI-y8-I0G" secondAttribute="trailing" constant="175.5" id="7AK-kR-tG7"/>
+                                                <constraint firstAttribute="trailing" secondItem="yzM-1o-Dld" secondAttribute="trailing" constant="8" id="MH6-oR-Uy8"/>
+                                                <constraint firstItem="yzM-1o-Dld" firstAttribute="top" secondItem="bmI-y8-I0G" secondAttribute="bottom" constant="12" id="Pmc-S4-izq"/>
+                                                <constraint firstItem="bmI-y8-I0G" firstAttribute="leading" secondItem="kgB-Oa-tn7" secondAttribute="leading" constant="8" id="U1s-Jd-BOi"/>
+                                                <constraint firstItem="l4D-b6-mqJ" firstAttribute="top" secondItem="kgB-Oa-tn7" secondAttribute="top" constant="8" id="btq-ik-eOZ"/>
+                                                <constraint firstItem="bmI-y8-I0G" firstAttribute="top" secondItem="l4D-b6-mqJ" secondAttribute="bottom" constant="8" symbolic="YES" id="dVt-Cv-prM"/>
+                                                <constraint firstItem="l4D-b6-mqJ" firstAttribute="leading" secondItem="kgB-Oa-tn7" secondAttribute="leading" constant="8" id="q3H-pg-lYN"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="219" height="128"/>
+                                        <connections>
+                                            <outlet property="accountNumberLabel" destination="yzM-1o-Dld" id="NCa-nv-B6E"/>
+                                            <outlet property="accountTypeImageView" destination="l4D-b6-mqJ" id="Gds-cO-XTJ"/>
+                                            <outlet property="usableAmountLabel" destination="bmI-y8-I0G" id="hBQ-CZ-uyl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="0P4-1y-lLD" id="FME-Ls-Kpw"/>
+                                    <outlet property="delegate" destination="0P4-1y-lLD" id="Lzo-ZE-HNW"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MrT-rb-9YQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
