@@ -550,6 +550,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kxc-48-CUU"/>
+                    <connections>
+                        <outlet property="investmentsTableView" destination="OHH-Qf-6L3" id="YnG-Wx-pb7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzO-3n-hV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
