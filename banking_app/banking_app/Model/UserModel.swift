@@ -10,4 +10,5 @@ import Foundation
 struct UserModel {
     var accounts: [AccountModel]
     var cards: [CardModel]
+    var worth: WorthModel
 }

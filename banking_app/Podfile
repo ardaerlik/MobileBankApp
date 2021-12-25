@@ -7,5 +7,6 @@ target 'banking_app' do
 
   # Pods for banking_app
   pod 'Firebase/Firestore'
+  pod 'Charts'
 
 end

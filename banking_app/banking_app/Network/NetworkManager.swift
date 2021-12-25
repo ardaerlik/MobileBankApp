@@ -25,12 +25,13 @@ class NetworkManager {
             
             if let data = snapshot?.data(),
                let cards = data["cards"] as? [[String: Any]],
+               let worth = data["worth"] as? [String: Any],
                (snapshot?.exists ?? false) && error == nil {
                 let isPasswordCorrect = password == (data["password"] as? String)
                 
-                cards.forEach { userCards.append(CardModel(with: $0)) }
-                
-                completion(isPasswordCorrect ? .success(UserModel(accounts: userAccounts, cards: userCards)) : .failure(AppError.invalidPassword))
+                cards.forEach { userCards.append(CardModel(with: $0)) } 
+                let worthModel = WorthModel(with: worth)
+                completion(isPasswordCorrect ? .success(UserModel(accounts: userAccounts, cards: userCards, worth: worthModel)) : .failure(AppError.invalidPassword))
             } else {
                 completion(.failure(AppError.invalidCredentials))
             }
