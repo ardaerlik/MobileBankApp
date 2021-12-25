@@ -17,7 +17,7 @@ struct AccountModel {
               let accountNumber = dictionary["accountNumber"] as? String,
               let usableAmount = dictionary["usableAmount"] as? Double,
               let accountTypeTmp = dictionary["accountType"] as? String else { return }
-        self.accountNumber = accountNumber
+        self.accountNumber = accountNumber.separate(every: 4, with: " ")
         self.usableAmount = usableAmount
         
         switch accountTypeTmp {

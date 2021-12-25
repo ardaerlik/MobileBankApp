@@ -48,7 +48,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (accountsCollectionView == collectionView) {
             return AppSingleton.shared.userModel?.accounts.count ?? 0
-        } else if (cardsCollectionView == collectionView) {
+        } else {
             return AppSingleton.shared.userModel?.cards.count ?? 0
         }
     }
@@ -58,7 +58,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell: AccountsCollectionViewCell = accountsCollectionView.dequeueReusableCell(withReuseIdentifier: "AccountsCollectionViewCell", for: indexPath) as! AccountsCollectionViewCell
             cell.configure(with: AppSingleton.shared.userModel?.accounts[indexPath.row])
             return cell
-        } else if (cardsCollectionView == collectionView) {
+        } else {
             let cell: CardsCollectionViewCell = cardsCollectionView.dequeueReusableCell(withReuseIdentifier: "CardsCollectionViewCell", for: indexPath) as! CardsCollectionViewCell
             cell.configure(with: AppSingleton.shared.userModel?.cards[indexPath.row])
             return cell
