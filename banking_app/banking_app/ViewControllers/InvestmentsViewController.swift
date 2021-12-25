@@ -31,16 +31,14 @@ class InvestmentsViewController: UIViewController {
 }
 
 extension InvestmentsViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = InvestmentsTableViewCell()
+        return cell
     }
+    
     
 }
