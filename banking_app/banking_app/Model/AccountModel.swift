@@ -13,7 +13,25 @@ struct AccountModel {
     var usableAmount: Double?
     
     init(with dictionary: [String: Any]?) {
+        guard let dictionary = dictionary,
+              let accountNumber = dictionary["accountNumber"] as? String,
+              let usableAmount = dictionary["usableAmount"] as? Double,
+              let accountTypeTmp = dictionary["accountType"] as? String else { return }
+        self.accountNumber = accountNumber
+        self.usableAmount = usableAmount
         
+        switch accountTypeTmp {
+        case "TRY":
+            self.accountType = .TRY
+        case "USD":
+            self.accountType = .USD
+        case "EUR":
+            self.accountType = .EUR
+        case "XAU":
+            self.accountType = .XAU
+        default:
+            self.accountType = .TRY
+        }
     }
 }
 

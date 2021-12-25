@@ -9,6 +9,8 @@ import UIKit
 
 class InvestmentsViewController: UIViewController {
 
+    @IBOutlet private weak var investmentsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,19 @@ class InvestmentsViewController: UIViewController {
     }
     */
 
+}
+
+extension InvestmentsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 }

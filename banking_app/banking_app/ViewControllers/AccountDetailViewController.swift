@@ -9,21 +9,20 @@ import UIKit
 
 class AccountDetailViewController: UIViewController {
 
+    @IBOutlet private weak var accountTypeImageView: UIImageView!
+    @IBOutlet private weak var accountNumberLabel: UILabel!
+    @IBOutlet private weak var usableAmountLabel: UILabel!
+    
+    var accountModel: AccountModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI(with: accountModel!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUI(with model: AccountModel) {
+        // TODO: accountTypeImageView
+        accountNumberLabel.text = model.accountNumber
+        usableAmountLabel.text = "Usable Amount: \(model.usableAmount!)"
     }
-    */
-
 }
