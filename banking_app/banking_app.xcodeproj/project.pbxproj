@@ -11,9 +11,11 @@
 		634852F1276B902E00E2FA1F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634852F0276B902E00E2FA1F /* NetworkManager.swift */; };
 		634852F3276B90CE00E2FA1F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634852F2276B90CE00E2FA1F /* LoginModel.swift */; };
 		634852F8276B9B2700E2FA1F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634852F7276B9B2700E2FA1F /* AppError.swift */; };
+		63ACE775277260F9001D12C1 /* WorthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ACE774277260F9001D12C1 /* WorthModel.swift */; };
 		63AF409A276D65D100E18E99 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF4099276D65D100E18E99 /* DateExtension.swift */; };
 		63AF409C276D66E500E18E99 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF409B276D66E500E18E99 /* AppSingleton.swift */; };
 		63AF409E276D72EB00E18E99 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF409D276D72EB00E18E99 /* StringExtension.swift */; };
+		63EC201627736A3500BE15CD /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EC201527736A3500BE15CD /* DoubleExtension.swift */; };
 		63FA01002771F37600B7BAC3 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */; };
 		7F6CA7FDB49569E9421C1C34 /* Pods_banking_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7389560461CA0490470EC5 /* Pods_banking_app.framework */; };
 		C40CD9192764D1560061BB09 /* AccountsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD9182764D1540061BB09 /* AccountsDataSource.swift */; };
@@ -54,9 +56,11 @@
 		634852F0276B902E00E2FA1F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		634852F2276B90CE00E2FA1F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		634852F7276B9B2700E2FA1F /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		63ACE774277260F9001D12C1 /* WorthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorthModel.swift; sourceTree = "<group>"; };
 		63AF4099276D65D100E18E99 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		63AF409B276D66E500E18E99 /* AppSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
 		63AF409D276D72EB00E18E99 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		63EC201527736A3500BE15CD /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		C40CD9182764D1540061BB09 /* AccountsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsDataSource.swift; sourceTree = "<group>"; };
 		C40CD91A2764D16C0061BB09 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				63AF4099276D65D100E18E99 /* DateExtension.swift */,
 				63AF409B276D66E500E18E99 /* AppSingleton.swift */,
 				63AF409D276D72EB00E18E99 /* StringExtension.swift */,
+				63EC201527736A3500BE15CD /* DoubleExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				C479337927735627004B90BF /* ForexModel.swift */,
 				C479337B2773565A004B90BF /* FundModel.swift */,
 				C479337D2773567B004B90BF /* StockModel.swift */,
+				63ACE774277260F9001D12C1 /* WorthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				63AF409C276D66E500E18E99 /* AppSingleton.swift in Sources */,
 				E18411E3275E788300226A91 /* AppDelegate.swift in Sources */,
 				6316A4DB276D2CCD00950308 /* CardsCollectionViewCell.swift in Sources */,
+				63ACE775277260F9001D12C1 /* WorthModel.swift in Sources */,
 				C486177727677162000A9DCE /* CardModel.swift in Sources */,
 				C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */,
 				634852F8276B9B2700E2FA1F /* AppError.swift in Sources */,
@@ -360,6 +367,7 @@
 				C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */,
 				C479337E2773567B004B90BF /* StockModel.swift in Sources */,
 				C47933802773636C004B90BF /* AccountsCollectionViewCell.swift in Sources */,
+				63EC201627736A3500BE15CD /* DoubleExtension.swift in Sources */,
 				C4A26EBD276002F7009DB036 /* InvestmentsDetailViewController.swift in Sources */,
 				C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */,
 				C431E1562760DBF700A18D31 /* InvestmentsTableViewCell.swift in Sources */,
