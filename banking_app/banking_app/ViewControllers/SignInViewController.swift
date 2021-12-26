@@ -27,11 +27,6 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let mainViewController = segue.destination as! MainViewController
-//        main
-//    }
-    
     @IBAction func signIn(_ sender: Any) {
         NetworkManager.shared.getUserData(with: LoginModel(tckn: tckn.text, password: password.text)) { [weak self] result in
             guard let self = self else { return }

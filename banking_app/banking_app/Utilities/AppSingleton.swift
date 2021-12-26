@@ -14,5 +14,6 @@ final class AppSingleton {
     private init() { }
 
     var userModel: UserModel? = nil
+    var investmentModel: InvestmentModel? = nil
 
 }

@@ -22,7 +22,6 @@ class NetworkManager {
         var userAccounts = [AccountModel]()
         
         db.collection("users").document(tckn).getDocument { snapshot, error in
-            
             if let data = snapshot?.data(),
                let cards = data["cards"] as? [[String: Any]],
                let accounts = data["accounts"] as? [[String: Any]],
@@ -44,16 +43,23 @@ class NetworkManager {
         
     }
     
-    func getForexDetail(with model: ForexModel, completion: @escaping (Result<ForexModel, AppError>) -> Void) {
-        
-    }
-    
-    func getFundDetail(with model: FundModel, completion: @escaping (Result<FundModel, AppError>) -> Void) {
-        
-    }
-    
-    func getStockDetail(with model: StockModel, completion: @escaping (Result<StockModel, AppError>) -> Void) {
-        
+    func getInvestmentsDetail(with model: InvestmentModel, completion: @escaping (Result<[InvestmentModel], AppError>) -> Void) {
+        db.collection("investments").getDocuments { snapshot, error in
+            if error != nil {
+                completion(.failure(AppError.investmentsError))
+            } else {
+                var investments = [InvestmentModel]()
+                
+                for document in snapshot!.documents {
+                    let data = document.data()
+                    var investmentModel = InvestmentModel(with: data)
+                    investmentModel.name = document.documentID
+                    investments.append(investmentModel)
+                }
+                
+                completion(.success(investments))
+            }
+        }
     }
     
 }
