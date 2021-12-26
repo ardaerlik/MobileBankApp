@@ -31,6 +31,7 @@
 		C486177727677162000A9DCE /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177627677161000A9DCE /* CardModel.swift */; };
 		C486177927677180000A9DCE /* CardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177827677180000A9DCE /* CardsDataSource.swift */; };
 		C491406C2778B1B7008B38B2 /* InvestmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406B2778B1B6008B38B2 /* InvestmentModel.swift */; };
+		C491406E277910C5008B38B2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */; };
 		C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB2275FF5A4009DB036 /* MainViewController.swift */; };
 		C4A26EB5275FF5BB009DB036 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */; };
 		C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */; };
@@ -73,6 +74,7 @@
 		C486177627677161000A9DCE /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		C486177827677180000A9DCE /* CardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSource.swift; sourceTree = "<group>"; };
 		C491406B2778B1B6008B38B2 /* InvestmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModel.swift; sourceTree = "<group>"; };
+		C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		C4A26EB2275FF5A4009DB036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				C4A26EBC276002F6009DB036 /* InvestmentsDetailViewController.swift */,
 				C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */,
 				C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */,
+				C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C491406E277910C5008B38B2 /* ChangePasswordViewController.swift in Sources */,
 				E18411E7275E788300226A91 /* SignInViewController.swift in Sources */,
 				63AF409C276D66E500E18E99 /* AppSingleton.swift in Sources */,
 				E18411E3275E788300226A91 /* AppDelegate.swift in Sources */,

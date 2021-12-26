@@ -14,7 +14,6 @@ class SignInViewController: UIViewController {
     @IBOutlet private weak var password: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         errorLabel.isHidden = true

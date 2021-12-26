@@ -9,21 +9,26 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var tcknLabel: UILabel!
+    @IBOutlet private weak var gsmLabel: UILabel!
+    @IBOutlet private weak var addressTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI(with: AppSingleton.shared.userModel!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUI(with model: UserModel) {
+        userNameLabel.text = model.username
+        tcknLabel.text = model.tckn
+        gsmLabel.text = model.gsm
+        addressTextView.text = model.address
+        // TODO: Textview change input
     }
-    */
-
+    
+    @IBAction func changePasswordTouched(_ sender: UIButton) {
+    }
+    
 }

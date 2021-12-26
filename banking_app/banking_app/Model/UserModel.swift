@@ -11,4 +11,8 @@ struct UserModel {
     var accounts: [AccountModel]
     var cards: [CardModel]
     var worth: WorthModel
+    var username: String
+    var tckn: String
+    var gsm: String
+    var address: String
 }

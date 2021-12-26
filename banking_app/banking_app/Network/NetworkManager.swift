@@ -23,6 +23,10 @@ class NetworkManager {
         
         db.collection("users").document(tckn).getDocument { snapshot, error in
             if let data = snapshot?.data(),
+               let tckn = snapshot?.documentID,
+               let username = data["NameSurname"] as? String,
+               let address = data["Address"] as? String,
+               let gsm = data["GSM"] as? String,
                let cards = data["cards"] as? [[String: Any]],
                let accounts = data["accounts"] as? [[String: Any]],
                let worth = data["worth"] as? [String: Any],
@@ -32,7 +36,7 @@ class NetworkManager {
                 cards.forEach { userCards.append(CardModel(with: $0)) } 
                 accounts.forEach { userAccounts.append(AccountModel(with: $0)) }
                 let worthModel = WorthModel(with: worth)
-                completion(isPasswordCorrect ? .success(UserModel(accounts: userAccounts, cards: userCards, worth: worthModel)) : .failure(AppError.invalidPassword))
+                completion(isPasswordCorrect ? .success(UserModel(accounts: userAccounts, cards: userCards, worth: worthModel, username: username, tckn: tckn, gsm: gsm, address: address)) : .failure(AppError.invalidPassword))
             } else {
                 completion(.failure(AppError.invalidCredentials))
             }
