@@ -22,12 +22,12 @@
 		C40CD91B2764D16C0061BB09 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD91A2764D16C0061BB09 /* AccountModel.swift */; };
 		C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */; };
 		C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */; };
-		C431E1562760DBF700A18D31 /* InvestmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1552760DBF700A18D31 /* InvestmentsTableViewCell.swift */; };
 		C431E1582760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */; };
 		C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */; };
 		C45BEA922768C4BC00A77542 /* FirebaseDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */; };
 		C4644EE5276926A1002C17B9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4644EE4276926A1002C17B9 /* UserModel.swift */; };
 		C47933802773636C004B90BF /* AccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479337F2773636C004B90BF /* AccountsCollectionViewCell.swift */; };
+		C4818834277A08A600E26839 /* InvestmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */; };
 		C486177727677162000A9DCE /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177627677161000A9DCE /* CardModel.swift */; };
 		C486177927677180000A9DCE /* CardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177827677180000A9DCE /* CardsDataSource.swift */; };
 		C491406C2778B1B7008B38B2 /* InvestmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406B2778B1B6008B38B2 /* InvestmentModel.swift */; };
@@ -65,12 +65,12 @@
 		C40CD91A2764D16C0061BB09 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
-		C431E1552760DBF700A18D31 /* InvestmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersTableViewCell.swift; sourceTree = "<group>"; };
 		C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataSourceDelegate.swift; sourceTree = "<group>"; };
 		C4644EE4276926A1002C17B9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C479337F2773636C004B90BF /* AccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C486177627677161000A9DCE /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		C486177827677180000A9DCE /* CardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSource.swift; sourceTree = "<group>"; };
 		C491406B2778B1B6008B38B2 /* InvestmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModel.swift; sourceTree = "<group>"; };
@@ -145,10 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				6316A4DA276D2CCD00950308 /* CardsCollectionViewCell.swift */,
-				C431E1552760DBF700A18D31 /* InvestmentsTableViewCell.swift */,
 				C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */,
 				C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */,
 				C479337F2773636C004B90BF /* AccountsCollectionViewCell.swift */,
+				C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -348,6 +348,7 @@
 				63ACE775277260F9001D12C1 /* WorthModel.swift in Sources */,
 				C486177727677162000A9DCE /* CardModel.swift in Sources */,
 				C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */,
+				C4818834277A08A600E26839 /* InvestmentsTableViewCell.swift in Sources */,
 				634852F8276B9B2700E2FA1F /* AppError.swift in Sources */,
 				E18411E5275E788300226A91 /* SceneDelegate.swift in Sources */,
 				63AF409E276D72EB00E18E99 /* StringExtension.swift in Sources */,
@@ -366,7 +367,6 @@
 				63EC201627736A3500BE15CD /* DoubleExtension.swift in Sources */,
 				C4A26EBD276002F7009DB036 /* InvestmentsDetailViewController.swift in Sources */,
 				C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */,
-				C431E1562760DBF700A18D31 /* InvestmentsTableViewCell.swift in Sources */,
 				63FA01002771F37600B7BAC3 /* TransactionModel.swift in Sources */,
 				63AF409A276D65D100E18E99 /* DateExtension.swift in Sources */,
 				C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */,

@@ -829,22 +829,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRs-Zm-Ell">
-                                                    <rect key="frame" x="20" y="19.5" width="334" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRs-Zm-Ell" userLabel="Investment Type Label">
+                                                    <rect key="frame" x="20" y="20" width="266" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="arrowshape.turn.up.left.2.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="caN-uH-l1v" userLabel="Icon Image View">
+                                                    <rect key="frame" x="294" y="5.5" width="69" height="48"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="height" secondItem="2Fc-3Q-YZD" secondAttribute="height" multiplier="0.35" id="ET3-0G-jIo"/>
-                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="centerX" secondItem="2Fc-3Q-YZD" secondAttribute="centerX" id="VQa-by-aXG"/>
-                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="centerY" secondItem="2Fc-3Q-YZD" secondAttribute="centerY" id="eCh-GT-pM8"/>
-                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="width" secondItem="2Fc-3Q-YZD" secondAttribute="width" multiplier="0.893048" id="vAi-45-9Vx"/>
+                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="leading" secondItem="2Fc-3Q-YZD" secondAttribute="leading" constant="10" id="EBS-4W-uZj"/>
+                                                <constraint firstAttribute="trailing" secondItem="caN-uH-l1v" secondAttribute="trailing" constant="10" id="HBY-uY-dIt"/>
+                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="centerY" secondItem="2Fc-3Q-YZD" secondAttribute="centerY" id="UNd-v0-Sz9"/>
+                                                <constraint firstItem="caN-uH-l1v" firstAttribute="leading" secondItem="iRs-Zm-Ell" secondAttribute="trailing" constant="15" id="g49-EX-JaB"/>
+                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="centerY" secondItem="caN-uH-l1v" secondAttribute="centerY" id="gsq-jV-Snq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="investmentTypeLabel" destination="iRs-Zm-Ell" id="N8w-JA-Pn2"/>
                                             <segue destination="2Tf-sM-rJW" kind="show" id="wXh-gk-y9D"/>
                                         </connections>
                                     </tableViewCell>
@@ -888,7 +893,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BEA-rX-xqn" customClass="InvestmentsDetailTableViewCell" customModule="banking_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvestmentsDetailTableViewCell" id="BEA-rX-xqn" customClass="InvestmentsDetailTableViewCell" customModule="banking_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BEA-rX-xqn" id="1Q8-N7-gyd">
@@ -1083,6 +1088,7 @@
         <image name="KB" width="289" height="174"/>
         <image name="KB_YAZI" width="288" height="44"/>
         <image name="SagaOk" width="110" height="49"/>
+        <image name="arrowshape.turn.up.left.2.circle" catalog="system" width="128" height="121"/>
         <image name="investments" width="120" height="120"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="settings" width="120" height="120"/>

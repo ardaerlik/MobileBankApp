@@ -24,16 +24,16 @@ class TransfersTableViewCell: UITableViewCell {
     }
     
     func configure(with model: TransactionModel?) {
-        transferAmountLabel.text = "\(model.amount!)"
-        transferIdLabel.text = model.transferId
+        transferAmountLabel.text = "\(model?.amount!)"
+        transferIdLabel.text = model?.transferId
         
-        if model.senderTCKN == AppSingleton.shared.userModel?.tckn {
-            userTcknLabel.text = model.senderTCKN
-            otherTcknLabel.text = model.receiverTCKN
+        if model?.senderTCKN == AppSingleton.shared.userModel?.tckn {
+            userTcknLabel.text = model?.senderTCKN
+            otherTcknLabel.text = model?.receiverTCKN
             transferWayImageView.image = UIImage(named: "SagaOk")
         } else {
-            userTcknLabel.text = model.receiverTCKN
-            otherTcknLabel.text = model.senderTCKN
+            userTcknLabel.text = model?.receiverTCKN
+            otherTcknLabel.text = model?.senderTCKN
             transferWayImageView.image = UIImage(named: "SolaOk")
         }
     }
