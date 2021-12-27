@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Settings"
         setUI(with: AppSingleton.shared.userModel!)
     }
     
@@ -29,6 +30,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changePasswordTouched(_ sender: UIButton) {
+        // TODO: Add segue to ChangePasswordViewController
     }
-    
 }
