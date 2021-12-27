@@ -15,5 +15,6 @@ final class AppSingleton {
 
     var userModel: UserModel? = nil
     var investmentModel: InvestmentModel? = nil
+    var transactionModels: [TransactionModel]? = nil
 
 }

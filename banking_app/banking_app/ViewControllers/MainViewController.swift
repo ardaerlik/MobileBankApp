@@ -43,12 +43,7 @@ class MainViewController: UIViewController {
         } else if segue.identifier == "showTransfers" {
             NetworkManager.shared.getTransactionsDetail(with: AppSingleton.shared.userModel!) { [weak self] result in
                 guard let self = self else { return }
-                
-//                switch result {
-//                case .success(let transfers):
-//                    AppSingleton.shared.userModel
-//                case .failure(let errorType):
-//                }
+                // TODO: completion handler
             }
         }
     }

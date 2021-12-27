@@ -23,8 +23,19 @@ class TransfersTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    private func setUI(with model: TransactionModel) {
-        // TODO: Change values of labels and image view
+    func configure(with model: TransactionModel?) {
+        transferAmountLabel.text = "\(model.amount!)"
+        transferIdLabel.text = model.transferId
+        
+        if model.senderTCKN == AppSingleton.shared.userModel?.tckn {
+            userTcknLabel.text = model.senderTCKN
+            otherTcknLabel.text = model.receiverTCKN
+            transferWayImageView.image = UIImage(named: "SagaOk")
+        } else {
+            userTcknLabel.text = model.receiverTCKN
+            otherTcknLabel.text = model.senderTCKN
+            transferWayImageView.image = UIImage(named: "SolaOk")
+        }
     }
 
 }

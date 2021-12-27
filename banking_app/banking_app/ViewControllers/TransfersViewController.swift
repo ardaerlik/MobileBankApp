@@ -32,10 +32,12 @@ extension TransfersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return AppSingleton.shared.transactionModels!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: TransfersTableViewCell = transfersTableView.dequeueReusableCell(withIdentifier: "TransfersTableViewCell") as! TransfersTableViewCell
+        cell.configure(with: (AppSingleton.shared.transactionModels?[indexPath.row]))
+        return cell
     }
 }
