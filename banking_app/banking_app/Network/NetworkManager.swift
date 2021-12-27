@@ -43,11 +43,37 @@ class NetworkManager {
         }
     }
     
-    func getTransactionsDetail(with model: AccountModel, completion: @escaping (Result<TransactionModel, AppError>) -> Void) {
+    func getTransactionsDetail(with model: UserModel, completion: @escaping (Result<[TransactionModel], AppError>) -> Void) {
+        var transfers = [TransactionModel]()
         
+        db.collection("transfers").whereField("receiverTCKN", isEqualTo: model.tckn).getDocuments { snapshot, error in
+            if error != nil {
+                completion(.failure(AppError.transfersError))
+            } else {
+                for document in snapshot!.documents {
+                    let data = document.data()
+                    var transactionModel = TransactionModel(with: data)
+                    transactionModel.transferId = document.documentID
+                    transfers.append(transactionModel)
+                }
+            }
+        }
+        
+        db.collection("transfers").whereField("senderTCKN", isEqualTo: model.tckn).getDocuments { snapshot, error in
+            if error != nil {
+                completion(.failure(AppError.transfersError))
+            } else {
+                for document in snapshot!.documents {
+                    let data = document.data()
+                    var transactionModel = TransactionModel(with: data)
+                    transactionModel.transferId = document.documentID
+                    transfers.append(transactionModel)
+                }
+            }
+        }
     }
     
-    func getInvestmentsDetail(with model: InvestmentModel, completion: @escaping (Result<[InvestmentModel], AppError>) -> Void) {
+    func getInvestmentsDetail(completion: @escaping (Result<[InvestmentModel], AppError>) -> Void) {
         db.collection("investments").getDocuments { snapshot, error in
             if error != nil {
                 completion(.failure(AppError.investmentsError))

@@ -11,4 +11,5 @@ enum AppError: String, Error {
     case invalidPassword  = "Invalid password. Please try again."
     case invalidCredentials  = "Invalid credentials. Please try again."
     case investmentsError = "Investments info has not fetched"
+    case transfersError = "Transfers info has not fetched"
 }

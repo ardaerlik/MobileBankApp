@@ -40,6 +40,16 @@ class MainViewController: UIViewController {
             guard let object = sender as? AccountModel else { return }
             let detailViewController = segue.destination as! AccountDetailViewController
             detailViewController.accountModel = object
+        } else if segue.identifier == "showTransfers" {
+            NetworkManager.shared.getTransactionsDetail(with: AppSingleton.shared.userModel!) { [weak self] result in
+                guard let self = self else { return }
+                
+//                switch result {
+//                case .success(let transfers):
+//                    AppSingleton.shared.userModel
+//                case .failure(let errorType):
+//                }
+            }
         }
     }
 }
