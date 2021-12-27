@@ -92,4 +92,25 @@ class NetworkManager {
         }
     }
     
+    func changePassword(with model: UserModel, oldPassword: String, newPassword: String, completion: @escaping (Result<UserModel, AppError>) -> Void) {
+        db.collection("users").document(model.tckn).getDocument { snapshot, error in
+            if let data = snapshot?.data(),
+               let oldPasswordDb = data["password"] as? String,
+               (snapshot?.exists ?? false) && error == nil {
+                if oldPasswordDb == oldPassword {
+                    if oldPassword == newPassword {
+                        completion(.failure(AppError.samePassword))
+                    } else {
+                        self.db.collection("users").document(model.tckn).setValue(newPassword, forKey: "password")
+                        completion(.success(AppSingleton.shared.userModel!))
+                    }
+                } else {
+                    completion(.failure(AppError.invalidPassword))
+                }
+            } else {
+                completion(.failure(AppError.invalidCredentials))
+            }
+        }
+    }
+    
 }

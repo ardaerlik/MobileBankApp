@@ -26,6 +26,17 @@ class ChangePasswordViewController: UIViewController {
     }
     
     @IBAction func changePassword(_ sender: UIButton) {
+        NetworkManager.shared.changePassword(with: AppSingleton.shared.userModel!, oldPassword: oldPasswordTextField.text!, newPassword: newPasswordTextField.text!) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let user):
+                AppSingleton.shared.userModel = user
+            case .failure(let errorType):
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = errorType.rawValue
+            }
+        }
     }
 }
 

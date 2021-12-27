@@ -800,6 +800,7 @@
                             <constraint firstItem="iMB-z0-DZl" firstAttribute="top" secondItem="fVb-P2-FuJ" secondAttribute="top" constant="40" id="r71-rq-Zxa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GMX-hi-p3n"/>
                     <connections>
                         <outlet property="errorLabel" destination="kUJ-nl-ejX" id="LaJ-6c-xU2"/>
                         <outlet property="newPasswordTextField" destination="4Gd-4u-Ike" id="JOi-45-c30"/>
