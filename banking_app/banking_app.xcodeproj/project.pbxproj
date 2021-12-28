@@ -30,6 +30,7 @@
 		C4818834277A08A600E26839 /* InvestmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */; };
 		C486177727677162000A9DCE /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177627677161000A9DCE /* CardModel.swift */; };
 		C486177927677180000A9DCE /* CardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177827677180000A9DCE /* CardsDataSource.swift */; };
+		C4911E19277B00AF00488723 /* TransferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4911E18277B00AF00488723 /* TransferMoneyViewController.swift */; };
 		C491406C2778B1B7008B38B2 /* InvestmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406B2778B1B6008B38B2 /* InvestmentModel.swift */; };
 		C491406E277910C5008B38B2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */; };
 		C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB2275FF5A4009DB036 /* MainViewController.swift */; };
@@ -73,6 +74,7 @@
 		C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C486177627677161000A9DCE /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		C486177827677180000A9DCE /* CardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSource.swift; sourceTree = "<group>"; };
+		C4911E18277B00AF00488723 /* TransferMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyViewController.swift; sourceTree = "<group>"; };
 		C491406B2778B1B6008B38B2 /* InvestmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModel.swift; sourceTree = "<group>"; };
 		C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		C4A26EB2275FF5A4009DB036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */,
 				C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */,
 				C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */,
+				C4911E18277B00AF00488723 /* TransferMoneyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				634852F3276B90CE00E2FA1F /* LoginModel.swift in Sources */,
 				C4644EE5276926A1002C17B9 /* UserModel.swift in Sources */,
 				634852F1276B902E00E2FA1F /* NetworkManager.swift in Sources */,
+				C4911E19277B00AF00488723 /* TransferMoneyViewController.swift in Sources */,
 				C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */,
 				C45BEA922768C4BC00A77542 /* FirebaseDataSourceDelegate.swift in Sources */,
 				C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */,
