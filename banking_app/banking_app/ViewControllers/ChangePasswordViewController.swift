@@ -20,7 +20,7 @@ class ChangePasswordViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         errorLabel.isHidden = true
-        errorLabel.textColor = .red
+        errorLabel.textColor = .black
         oldPasswordTextField.delegate = self
         newPasswordTextField.delegate = self
     }
@@ -28,13 +28,18 @@ class ChangePasswordViewController: UIViewController {
     @IBAction func changePassword(_ sender: UIButton) {
         NetworkManager.shared.changePassword(with: AppSingleton.shared.userModel!, oldPassword: oldPasswordTextField.text!, newPassword: newPasswordTextField.text!) { [weak self] result in
             guard let self = self else { return }
-            
+
             switch result {
             case .success(let user):
                 AppSingleton.shared.userModel = user
-            case .failure(let errorType):
+                self.errorLabel.textColor = .green
+                self.errorLabel.text = "Password has been changed"
                 self.errorLabel.isHidden = false
+                self.navigationController?.popViewController(animated: true)
+            case .failure(let errorType):
+                self.errorLabel.textColor = .red
                 self.errorLabel.text = errorType.rawValue
+                self.errorLabel.isHidden = false
             }
         }
     }

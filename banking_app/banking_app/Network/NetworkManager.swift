@@ -97,15 +97,23 @@ class NetworkManager {
             if let data = snapshot?.data(),
                let oldPasswordDb = data["password"] as? String,
                (snapshot?.exists ?? false) && error == nil {
-                if oldPasswordDb == oldPassword {
-                    if oldPassword == newPassword {
-                        completion(.failure(AppError.samePassword))
-                    } else {
-                        self.db.collection("users").document(model.tckn).setValue(newPassword, forKey: "password")
-                        completion(.success(AppSingleton.shared.userModel!))
-                    }
-                } else {
+                if oldPasswordDb != oldPassword {
                     completion(.failure(AppError.invalidPassword))
+                    return
+                }
+                
+                if oldPassword == newPassword {
+                    completion(.failure(AppError.samePassword))
+                    return
+                }
+                
+                self.db.collection("users").document(model.tckn).updateData(["password": newPassword]) { error2 in
+                    if error2 != nil {
+                        completion(.failure(AppError.databaseUpdateError))
+                        return
+                    }
+                    
+                    completion(.success(AppSingleton.shared.userModel!))
                 }
             } else {
                 completion(.failure(AppError.invalidCredentials))

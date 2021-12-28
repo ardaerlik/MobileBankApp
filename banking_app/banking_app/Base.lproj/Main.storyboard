@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="40" id="mUC-XK-BsJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhP-29-RuE">
                                 <rect key="frame" x="50" y="521" width="314" height="40"/>
@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="40" id="kTT-lI-he8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irg-yw-eo3">
                                 <rect key="frame" x="50" y="621" width="314" height="40"/>
@@ -672,9 +672,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="changePasswordTouched:" destination="2cx-0W-pna" eventType="touchUpInside" id="4fQ-sM-Ee3"/>
-                                    <segue destination="l0M-Y7-X1d" kind="popoverPresentation" popoverAnchorView="6aT-7P-rj8" id="wys-v2-Rcj">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="l0M-Y7-X1d" kind="show" id="wys-v2-Rcj"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jh0-PD-2R7" userLabel="Avatar">
@@ -723,27 +721,27 @@
             <objects>
                 <viewController id="l0M-Y7-X1d" customClass="ChangePasswordViewController" customModule="banking_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAB-Oe-XyH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMB-z0-DZl" userLabel="Change Password">
-                                <rect key="frame" x="90.5" y="40" width="233.5" height="36"/>
+                                <rect key="frame" x="90.5" y="128" width="233.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-lD-Moq">
-                                <rect key="frame" x="20" y="205" width="374" height="34"/>
+                                <rect key="frame" x="20" y="293" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Gd-4u-Ike">
-                                <rect key="frame" x="20" y="358" width="374" height="34"/>
+                                <rect key="frame" x="20" y="446" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNQ-CB-HAL">
-                                <rect key="frame" x="20" y="289" width="152.5" height="29"/>
+                                <rect key="frame" x="20" y="377" width="152.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -762,14 +760,14 @@
                                     <action selector="changePassword:" destination="l0M-Y7-X1d" eventType="touchUpInside" id="4eg-Kf-dhl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUJ-nl-ejX" userLabel="Error Label">
-                                <rect key="frame" x="20" y="533" width="374" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUJ-nl-ejX" userLabel="Error Label">
+                                <rect key="frame" x="20" y="618" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-Ny-fKw">
-                                <rect key="frame" x="20" y="136" width="374" height="29"/>
+                                <rect key="frame" x="20" y="224" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -781,6 +779,7 @@
                             <constraint firstItem="Qui-Nn-O0e" firstAttribute="top" secondItem="4Gd-4u-Ike" secondAttribute="bottom" constant="60" id="6ng-cw-MhA"/>
                             <constraint firstItem="fVb-P2-FuJ" firstAttribute="trailing" secondItem="aDc-lD-Moq" secondAttribute="trailing" constant="20" id="Ccy-oH-HMa"/>
                             <constraint firstItem="nNQ-CB-HAL" firstAttribute="leading" secondItem="fVb-P2-FuJ" secondAttribute="leading" constant="20" id="Cns-Nn-d6c"/>
+                            <constraint firstItem="kUJ-nl-ejX" firstAttribute="top" secondItem="Qui-Nn-O0e" secondAttribute="bottom" constant="40" id="Nnq-hf-Qxu"/>
                             <constraint firstItem="kUJ-nl-ejX" firstAttribute="centerX" secondItem="fVb-P2-FuJ" secondAttribute="centerX" id="QAa-Tk-fVO"/>
                             <constraint firstItem="Qui-Nn-O0e" firstAttribute="centerX" secondItem="fVb-P2-FuJ" secondAttribute="centerX" id="QV2-Xy-IcU"/>
                             <constraint firstItem="aDc-lD-Moq" firstAttribute="top" secondItem="tK6-Ny-fKw" secondAttribute="bottom" constant="40" id="SW0-yl-8uJ"/>
