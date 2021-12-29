@@ -21,7 +21,7 @@ class AccountDetailViewController: UIViewController {
     }
     
     private func setUI(with model: AccountModel) {
-        accountNumberLabel.text = model.accountNumber
+        accountNumberLabel.text = model.accountNumber!.separate(every: 4, with: " ")
         usableAmountLabel.text = "Usable Amount: \(model.usableAmount!)"
     }
 }

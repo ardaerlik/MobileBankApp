@@ -11,15 +11,21 @@ struct TransactionModel {
     var transferId: String?
     var receiverTCKN: String?
     var senderTCKN: String?
+    var receiverAccount: String?
+    var senderAccount: String?
     var amount: Double?
     
     init(with dictionary: [String: Any]?) {
         guard let dictionary = dictionary,
               let receiverTCKN = dictionary["receiverTCKN"] as? String,
-                let senderTCKN = dictionary["senderTCKN"] as? String,
-                let amount = dictionary["amount"] as? Double else { return }
+              let senderTCKN = dictionary["senderTCKN"] as? String,
+              let receiverAccount = dictionary["receiverAccount"] as? String,
+              let senderAccount = dictionary["senderAccount"] as? String,
+              let amount = dictionary["amount"] as? Double else { return }
         self.receiverTCKN = receiverTCKN
         self.senderTCKN = senderTCKN
+        self.receiverAccount = receiverAccount
+        self.senderAccount = senderAccount
         self.amount = amount
     }
 }

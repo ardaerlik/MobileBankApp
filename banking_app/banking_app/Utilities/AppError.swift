@@ -15,3 +15,10 @@ enum AppError: String, Error {
     case investmentsError = "Investments info has not fetched"
     case transfersError = "Transfers info has not fetched"
 }
+
+enum TransferError: String, Error {
+    case insufficientBalance = "Your account has an insufficient balance."
+    case invalidTckn = "Invalid TCKN. Please try again."
+    case invalidIban = "Invalid IBAN. Please try again."
+    case databaseError = "Database error occured"
+}

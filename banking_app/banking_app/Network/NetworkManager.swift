@@ -129,4 +129,59 @@ class NetworkManager {
         }
     }
     
+    func makeTransfer(with model: TransactionModel, completion: @escaping (Result<TransactionModel, TransferError>) -> Void) {
+        for account in AppSingleton.shared.userModel!.accounts {
+            if account.accountNumber == model.senderAccount {
+                if model.amount! > account.usableAmount! {
+                    completion(.failure(TransferError.insufficientBalance))
+                    return
+                } else {
+                    break
+                }
+            }
+        }
+        
+        db.collection("users").document(model.receiverTCKN!).getDocument { snapshot, error in
+            if !(snapshot?.exists ?? false) {
+                completion(.failure(TransferError.invalidTckn))
+                return
+            }
+
+            if let data = snapshot?.data(),
+               let accounts = data["accounts"] as? [[String: Any]] {
+                var receiverAccounts = [AccountModel]()
+                
+                accounts.forEach { receiverAccounts.append(AccountModel(with: $0))}
+                
+                var receiverExists = false
+                for var receiver in receiverAccounts {
+                    if receiver.accountNumber == model.receiverAccount {
+                        // TODO: Account type kontrol et
+                        receiver.usableAmount! += model.amount!
+                        receiverExists = true
+                        break
+                    }
+                }
+                
+                if !receiverExists {
+                    completion(.failure(TransferError.invalidIban))
+                    return
+                }
+                
+                self.db.collection("users").document(model.receiverTCKN!).updateData(["accounts": receiverAccounts]) { error2 in
+                    if error2 != nil {
+                        completion(.failure(TransferError.databaseError))
+                        return
+                    }
+                    
+//                    self.db.collection("users").document(model.senderTCKN!).updateData(<#T##fields: [AnyHashable : Any]##[AnyHashable : Any]#>) { error3 in
+//
+//                    }
+                }
+            } else {
+                completion(.failure(TransferError.databaseError))
+            }
+        }
+    }
+    
 }
