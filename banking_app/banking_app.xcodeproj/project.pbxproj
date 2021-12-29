@@ -15,6 +15,8 @@
 		63AF409A276D65D100E18E99 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF4099276D65D100E18E99 /* DateExtension.swift */; };
 		63AF409C276D66E500E18E99 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF409B276D66E500E18E99 /* AppSingleton.swift */; };
 		63AF409E276D72EB00E18E99 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF409D276D72EB00E18E99 /* StringExtension.swift */; };
+		63D8A46E277B78AB0050BF25 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8A46D277B78AB0050BF25 /* BaseViewController.swift */; };
+		63D8A471277BA5EF0050BF25 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8A470277BA5EF0050BF25 /* MainTabBarController.swift */; };
 		63EC201627736A3500BE15CD /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EC201527736A3500BE15CD /* DoubleExtension.swift */; };
 		63FA01002771F37600B7BAC3 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */; };
 		7F6CA7FDB49569E9421C1C34 /* Pods_banking_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7389560461CA0490470EC5 /* Pods_banking_app.framework */; };
@@ -60,6 +62,8 @@
 		63AF4099276D65D100E18E99 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		63AF409B276D66E500E18E99 /* AppSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
 		63AF409D276D72EB00E18E99 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		63D8A46D277B78AB0050BF25 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		63D8A470277BA5EF0050BF25 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		63EC201527736A3500BE15CD /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		C40CD9182764D1540061BB09 /* AccountsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsDataSource.swift; sourceTree = "<group>"; };
@@ -134,6 +138,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		63D8A46F277BA5D70050BF25 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				63D8A470277BA5EF0050BF25 /* MainTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		AA79BF5F8238D75BF59ECCA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +187,8 @@
 		C4A26EB1275FF521009DB036 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				63D8A46F277BA5D70050BF25 /* TabBarController */,
+				63D8A46D277B78AB0050BF25 /* BaseViewController.swift */,
 				E18411E6275E788300226A91 /* SignInViewController.swift */,
 				C4A26EB2275FF5A4009DB036 /* MainViewController.swift */,
 				C4A26EB4275FF5BB009DB036 /* SettingsViewController.swift */,
@@ -345,11 +359,13 @@
 			files = (
 				C491406E277910C5008B38B2 /* ChangePasswordViewController.swift in Sources */,
 				E18411E7275E788300226A91 /* SignInViewController.swift in Sources */,
+				63D8A471277BA5EF0050BF25 /* MainTabBarController.swift in Sources */,
 				63AF409C276D66E500E18E99 /* AppSingleton.swift in Sources */,
 				E18411E3275E788300226A91 /* AppDelegate.swift in Sources */,
 				6316A4DB276D2CCD00950308 /* CardsCollectionViewCell.swift in Sources */,
 				63ACE775277260F9001D12C1 /* WorthModel.swift in Sources */,
 				C486177727677162000A9DCE /* CardModel.swift in Sources */,
+				63D8A46E277B78AB0050BF25 /* BaseViewController.swift in Sources */,
 				C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */,
 				C4818834277A08A600E26839 /* InvestmentsTableViewCell.swift in Sources */,
 				634852F8276B9B2700E2FA1F /* AppError.swift in Sources */,

@@ -8,27 +8,19 @@
 import UIKit
 import Firebase
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
     
+    @IBOutlet private weak var settingsButton: UIButton!
     @IBOutlet private weak var cardsCollectionView: UICollectionView!
     @IBOutlet private weak var accountsCollectionView: UICollectionView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUI()
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    private func setUI() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOutDidTapped))
-        navigationItem.setHidesBackButton(true, animated: false)
-    }
-    
-    @objc func signOutDidTapped () {
-        navigationController?.popToRootViewController(animated: true)
+
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "showSettings", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,11 +32,6 @@ class MainViewController: UIViewController {
             guard let object = sender as? AccountModel else { return }
             let detailViewController = segue.destination as! AccountDetailViewController
             detailViewController.accountModel = object
-        } else if segue.identifier == "showTransfers" {
-            NetworkManager.shared.getTransactionsDetail(with: AppSingleton.shared.userModel!) { [weak self] result in
-                guard let self = self else { return }
-                // TODO: completion handler
-            }
         }
     }
 }
