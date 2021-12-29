@@ -24,7 +24,7 @@ class TransfersTableViewCell: UITableViewCell {
     }
     
     func configure(with model: TransactionModel?) {
-        transferAmountLabel.text = "\(model?.amount!)"
+        transferAmountLabel.text = "\(model?.amount! ?? 0)"
         transferIdLabel.text = model?.transferId
         
         if model?.senderTCKN == AppSingleton.shared.userModel?.tckn {

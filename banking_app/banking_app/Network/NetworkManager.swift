@@ -47,6 +47,7 @@ class NetworkManager {
         var transfers = [TransactionModel]()
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
+        
         db.collection("transfers").whereField("receiverTCKN", isEqualTo: model.tckn).getDocuments { snapshot, error in
             if error != nil {
                 completion(.failure(AppError.transfersError))

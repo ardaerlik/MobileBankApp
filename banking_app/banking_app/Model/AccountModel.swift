@@ -35,9 +35,9 @@ struct AccountModel {
     }
 }
 
-enum AccountType {
-    case TRY
-    case USD
-    case EUR
-    case XAU
+enum AccountType: String {
+    case TRY = "TRY"
+    case USD = "USD"
+    case EUR = "EUR"
+    case XAU = "XAU"
 }

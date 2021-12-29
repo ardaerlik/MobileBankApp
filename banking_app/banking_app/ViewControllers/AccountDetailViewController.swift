@@ -21,7 +21,6 @@ class AccountDetailViewController: UIViewController {
     }
     
     private func setUI(with model: AccountModel) {
-        // TODO: accountTypeImageView
         accountNumberLabel.text = model.accountNumber
         usableAmountLabel.text = "Usable Amount: \(model.usableAmount!)"
     }

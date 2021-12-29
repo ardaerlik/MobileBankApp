@@ -44,10 +44,10 @@ struct InvestmentModel {
     }
 }
 
-enum InvestmentCategory {
-    case Stock
-    case Forex
-    case Fund
+enum InvestmentCategory: String {
+    case Stock = "Stock"
+    case Forex = "Forex"
+    case Fund = "Fund"
 }
 
 enum Change {

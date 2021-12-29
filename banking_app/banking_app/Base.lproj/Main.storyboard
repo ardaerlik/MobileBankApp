@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkK-tm-AQg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkK-tm-AQg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -131,6 +131,10 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbO-tY-7Aa" userLabel="Sender Account Picker View">
                                 <rect key="frame" x="20" y="150" width="374" height="69"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LnO-ci-CLA" id="fdK-i5-iGc"/>
+                                    <outlet property="delegate" destination="LnO-ci-CLA" id="pVK-8I-0pZ"/>
+                                </connections>
                             </pickerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1F-WP-fkP" userLabel="View 2">
                                 <rect key="frame" x="0.0" y="232" width="414" height="30"/>
@@ -213,6 +217,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="makeTransferButtonTouched:" destination="LnO-ci-CLA" eventType="touchUpInside" id="a49-9a-hbJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiN-Hv-gek" userLabel="Transfer Error Label">
                                 <rect key="frame" x="20" y="663" width="374" height="32"/>
@@ -226,10 +233,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Make Transfer" id="BtB-mi-bQC"/>
+                    <connections>
+                        <outlet property="amountErrorLabel" destination="Ga5-VD-TkG" id="ZTm-o9-NSa"/>
+                        <outlet property="receiverAccountIbanTextField" destination="Wgt-4i-HuG" id="Vg6-lU-MeZ"/>
+                        <outlet property="receiverTcknTextField" destination="Gwz-Lo-sce" id="HJO-zn-M3n"/>
+                        <outlet property="senderAccountPickerView" destination="LbO-tY-7Aa" id="pM7-eS-6AW"/>
+                        <outlet property="transferAmountTextField" destination="tog-VT-i1V" id="nLJ-Qg-jsW"/>
+                        <outlet property="transferErrorLabel" destination="jiN-Hv-gek" id="6yA-UW-gnF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35s-rv-gn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5077" y="295"/>
+            <point key="canvasLocation" x="1796" y="660"/>
         </scene>
         <!--Transfers-->
         <scene sceneID="cqJ-ep-Wy3">
@@ -343,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZE-va-T4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3571" y="516"/>
+            <point key="canvasLocation" x="2748" y="660"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LC7-GS-5pp">
@@ -381,17 +396,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc0-zX-F1m">
-                                <rect key="frame" x="183" y="81" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUr-So-p6i">
-                                <rect key="frame" x="140" y="69" width="36" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-sC-aQL">
                                 <rect key="frame" x="20" y="396" width="374" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -573,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTh-R9-2Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3572" y="1341"/>
+            <point key="canvasLocation" x="2748" y="1359"/>
         </scene>
         <!--Account Detail View Controller-->
         <scene sceneID="raO-IZ-FHc">
@@ -638,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDK-A5-CLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5078" y="1025"/>
+            <point key="canvasLocation" x="3638" y="1359"/>
         </scene>
         <!--Card Detail View Controller-->
         <scene sceneID="gh6-mn-aEj">
@@ -719,7 +723,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2r-VV-9qg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5988" y="1025"/>
+            <point key="canvasLocation" x="4507" y="1359"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="sEw-nr-adb">
@@ -848,7 +852,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEq-9i-gTo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4984" y="1693"/>
+            <point key="canvasLocation" x="3638" y="2058"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="Edx-fI-0ja">
@@ -874,14 +878,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNQ-CB-HAL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNQ-CB-HAL" userLabel="New Password Label">
                                 <rect key="frame" x="20" y="377" width="152.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-Nn-O0e">
-                                <rect key="frame" x="20" y="437" width="374" height="57"/>
+                                <rect key="frame" x="20" y="521" width="374" height="57"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change Password">
                                     <backgroundConfiguration key="background" cornerRadius="14">
@@ -894,16 +898,16 @@
                                     <action selector="changePassword:" destination="l0M-Y7-X1d" eventType="touchUpInside" id="4eg-Kf-dhl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-Ny-fKw" userLabel="Old Password Label">
+                                <rect key="frame" x="20" y="224" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUJ-nl-ejX" userLabel="Error Label">
                                 <rect key="frame" x="20" y="618" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-Ny-fKw">
-                                <rect key="frame" x="20" y="224" width="374" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -942,7 +946,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFT-ag-47A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5987" y="1693"/>
+            <point key="canvasLocation" x="4506" y="2058"/>
         </scene>
         <!--Investments-->
         <scene sceneID="OKN-Wx-cJq">
@@ -1013,7 +1017,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzO-3n-hV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3571" y="2022"/>
+            <point key="canvasLocation" x="2748" y="2058"/>
         </scene>
         <!--Investments Detail View Controller-->
         <scene sceneID="y9w-K1-XjY">
@@ -1051,7 +1055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cq3-T3-It4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5883" y="2427"/>
+            <point key="canvasLocation" x="1796" y="2058"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="SB4-Ns-KmC">
@@ -1071,7 +1075,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khM-N6-bY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="1359"/>
+            <point key="canvasLocation" x="1796" y="1359"/>
         </scene>
         <!--Wallet-->
         <scene sceneID="XAJ-Xh-hM9">
@@ -1237,7 +1241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dP1-f2-otu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3571" y="2817"/>
+            <point key="canvasLocation" x="3638" y="660"/>
         </scene>
     </scenes>
     <resources>
