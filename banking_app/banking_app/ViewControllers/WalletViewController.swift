@@ -62,7 +62,7 @@ class WalletViewController: UIViewController {
         bondsLabel.text = "\(AppSingleton.shared.userModel?.worth.assets?.bonds ?? 0) TL"
         bondsInfoLabel.isHidden = false
         bondsLabel.isHidden = false
-        setPieChart()
+        setPieChartForInitialStatus()
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
@@ -85,9 +85,18 @@ class WalletViewController: UIViewController {
         stocksLabel.text = AppSingleton.shared.userModel?.worth.debts?.currency
         bondsInfoLabel.isHidden = true
         bondsLabel.isHidden = true
+        
+        var entries = [PieChartDataEntry]()
+        entries.append(PieChartDataEntry(value: 100, label: "Debts"))
+        
+        let dataSet = PieChartDataSet(entries: entries, label: "")
+        dataSet.colors = [ UIColor.systemRed ]
+        dataSet.drawValuesEnabled = false
+        
+        pieChartView.data = PieChartData(dataSet: dataSet)
     }
     
-    private func setPieChart() {
+    private func setPieChartForInitialStatus() {
         pieChartView.isUserInteractionEnabled = false
         pieChartView.rotationEnabled = false
         pieChartView.drawHoleEnabled = false

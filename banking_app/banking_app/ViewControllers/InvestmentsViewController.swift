@@ -7,13 +7,37 @@
 
 import UIKit
 
-class InvestmentsViewController: UIViewController {
+class InvestmentsViewController: BaseViewController {
 
     @IBOutlet private weak var investmentsTableView: UITableView!
+    
+    var investmentModel: [InvestmentModel]? {
+        didSet {
+            investmentsTableView.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showLoadingView()
+        getInvestments()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Investments"
+    }
+    
+    func getInvestments() {
+        NetworkManager.shared.getInvestmentsDetail { result in
+            self.dismissLoadingView()
+            switch result {
+            case .success(let model):
+                self.investmentModel = model
+            case .failure(_):
+                break
+            }
+        }
     }
 }
 

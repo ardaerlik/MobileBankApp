@@ -33,7 +33,7 @@ class SignInViewController: UIViewController {
             switch result {
             case .success(let user):
                 AppSingleton.shared.userModel = user
-                self.performSegue(withIdentifier: "showMainViewController", sender: nil)
+                self.performSegue(withIdentifier: "showTabbar", sender: nil)
             case .failure(let errorType):
                 self.errorLabel.isHidden = false
                 self.errorLabel.text = errorType.rawValue

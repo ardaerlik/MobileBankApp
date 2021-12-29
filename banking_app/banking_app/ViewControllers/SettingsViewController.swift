@@ -32,4 +32,8 @@ class SettingsViewController: UIViewController {
     @IBAction func changePasswordTouched(_ sender: UIButton) {
         // TODO: Add segue to ChangePasswordViewController
     }
+    
+    @IBAction func signOutTapped(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }

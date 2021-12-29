@@ -45,7 +45,8 @@ class NetworkManager {
     
     func getTransactionsDetail(with model: UserModel, completion: @escaping (Result<[TransactionModel], AppError>) -> Void) {
         var transfers = [TransactionModel]()
-        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         db.collection("transfers").whereField("receiverTCKN", isEqualTo: model.tckn).getDocuments { snapshot, error in
             if error != nil {
                 completion(.failure(AppError.transfersError))
@@ -57,6 +58,7 @@ class NetworkManager {
                     transfers.append(transactionModel)
                 }
             }
+            dispatchGroup.wait()
         }
         
         db.collection("transfers").whereField("senderTCKN", isEqualTo: model.tckn).getDocuments { snapshot, error in
@@ -70,6 +72,11 @@ class NetworkManager {
                     transfers.append(transactionModel)
                 }
             }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            completion(.success(transfers))
         }
     }
     
