@@ -42,6 +42,17 @@ struct InvestmentModel {
             self.change = .Same
         }
     }
+    
+    static func getInvestmentsByCategory(with investments: [InvestmentModel], by category: InvestmentCategory) -> [InvestmentModel] {
+        var selectedInvestments = [InvestmentModel]()
+        for investment in investments {
+            if investment.investmentCategory == category {
+                selectedInvestments.append(investment)
+            }
+        }
+        return selectedInvestments
+    }
+    
 }
 
 enum InvestmentCategory: String {
