@@ -11,14 +11,15 @@ class InvestmentsDetailViewController: UIViewController {
     
     @IBOutlet private weak var investmentsDetailTableView: UITableView!
     
-    var investments: [InvestmentModel]? {
-        didSet {
-            investmentsDetailTableView.reloadData()
-        }
-    }
+    var investments: [InvestmentModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        investmentsDetailTableView.reloadData()
     }
 
 }
