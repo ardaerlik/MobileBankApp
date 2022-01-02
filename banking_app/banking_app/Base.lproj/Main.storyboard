@@ -614,11 +614,6 @@
                             <constraint firstItem="MrT-rb-9YQ" firstAttribute="trailing" secondItem="eUE-wi-4ec" secondAttribute="trailing" constant="20" id="wsb-h3-SQa"/>
                             <constraint firstItem="l6a-u0-4bR" firstAttribute="top" secondItem="MrT-rb-9YQ" secondAttribute="top" constant="20" id="xcY-qM-f1b"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="25"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="fjq-qS-2gq"/>
                     <navigationItem key="navigationItem" id="MKG-RW-Cb0"/>

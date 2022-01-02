@@ -46,4 +46,13 @@ extension SignInViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         errorLabel.isHidden = true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == tckn || textField == password {
+            textField.resignFirstResponder()
+            return false
+        } else {
+            return true
+        }
+    }
 }

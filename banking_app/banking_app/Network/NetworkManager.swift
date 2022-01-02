@@ -54,7 +54,9 @@ class NetworkManager {
             } else {
                 for document in snapshot!.documents {
                     let data = document.data()
+                    // MARK: Transaction Model init sikinti var
                     var transactionModel = TransactionModel(with: data)
+                    transactionModel.receiverTCKN = data["receiverTCKN"] as? String
                     transactionModel.transferId = document.documentID
                     transfers.append(transactionModel)
                 }
