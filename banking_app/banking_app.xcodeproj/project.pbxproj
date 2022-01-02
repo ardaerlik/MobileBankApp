@@ -24,7 +24,6 @@
 		C40CD91B2764D16C0061BB09 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD91A2764D16C0061BB09 /* AccountModel.swift */; };
 		C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */; };
 		C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */; };
-		C431E1582760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */; };
 		C431E15A2760DC1E00A18D31 /* TransfersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */; };
 		C45BEA922768C4BC00A77542 /* FirebaseDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */; };
 		C4644EE5276926A1002C17B9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4644EE4276926A1002C17B9 /* UserModel.swift */; };
@@ -40,7 +39,6 @@
 		C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */; };
 		C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */; };
 		C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */; };
-		C4A26EBD276002F7009DB036 /* InvestmentsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26EBC276002F6009DB036 /* InvestmentsDetailViewController.swift */; };
 		C4E972B7276889FA00FC227E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4E972B6276889F900FC227E /* GoogleService-Info.plist */; };
 		E18411E3275E788300226A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18411E2275E788300226A91 /* AppDelegate.swift */; };
 		E18411E5275E788300226A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18411E4275E788300226A91 /* SceneDelegate.swift */; };
@@ -70,7 +68,6 @@
 		C40CD91A2764D16C0061BB09 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
-		C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersTableViewCell.swift; sourceTree = "<group>"; };
 		C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataSourceDelegate.swift; sourceTree = "<group>"; };
 		C4644EE4276926A1002C17B9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -86,7 +83,6 @@
 		C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
 		C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
 		C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
-		C4A26EBC276002F6009DB036 /* InvestmentsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsDetailViewController.swift; sourceTree = "<group>"; };
 		C4E972B6276889F900FC227E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E18411DF275E788300226A91 /* banking_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banking_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18411E2275E788300226A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				6316A4DA276D2CCD00950308 /* CardsCollectionViewCell.swift */,
-				C431E1572760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift */,
 				C431E1592760DC1E00A18D31 /* TransfersTableViewCell.swift */,
 				C479337F2773636C004B90BF /* AccountsCollectionViewCell.swift */,
 				C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */,
@@ -195,7 +190,6 @@
 				C4A26EB6275FF5D1009DB036 /* InvestmentsViewController.swift */,
 				C4A26EB8275FF5E1009DB036 /* TransfersViewController.swift */,
 				C4A26EBA275FF5ED009DB036 /* WalletViewController.swift */,
-				C4A26EBC276002F6009DB036 /* InvestmentsDetailViewController.swift */,
 				C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */,
 				C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */,
 				C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */,
@@ -385,14 +379,12 @@
 				C4A26EBB275FF5ED009DB036 /* WalletViewController.swift in Sources */,
 				C47933802773636C004B90BF /* AccountsCollectionViewCell.swift in Sources */,
 				63EC201627736A3500BE15CD /* DoubleExtension.swift in Sources */,
-				C4A26EBD276002F7009DB036 /* InvestmentsDetailViewController.swift in Sources */,
 				C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */,
 				63FA01002771F37600B7BAC3 /* TransactionModel.swift in Sources */,
 				63AF409A276D65D100E18E99 /* DateExtension.swift in Sources */,
 				C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */,
 				C40CD9192764D1560061BB09 /* AccountsDataSource.swift in Sources */,
 				C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */,
-				C431E1582760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92T35CPXMC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = banking_app/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Koc Bank";
@@ -571,6 +564,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92T35CPXMC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = banking_app/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Koc Bank";

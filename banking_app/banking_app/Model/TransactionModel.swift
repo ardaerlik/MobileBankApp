@@ -27,5 +27,7 @@ struct TransactionModel {
         self.receiverAccount = receiverAccount
         self.senderAccount = senderAccount
         self.amount = amount
+        print("receiverTckn: \(receiverTCKN)")
+        print(senderTCKN)
     }
 }

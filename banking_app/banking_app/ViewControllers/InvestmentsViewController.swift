@@ -11,11 +11,7 @@ class InvestmentsViewController: BaseViewController {
 
     @IBOutlet private weak var investmentsTableView: UITableView!
     
-    var investmentModel: [InvestmentModel]? {
-        didSet {
-            investmentsTableView.reloadData()
-        }
-    }
+    var expandableInvestments: [ExpandableInvestments]?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,29 +21,6 @@ class InvestmentsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Investments"
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! InvestmentsTableViewCell
-        
-        if let indexPath = investmentsTableView.indexPath(for: cell) {
-            let investmentType: InvestmentCategory
-            switch indexPath.row {
-            case 0:
-                investmentType = .Stock
-            case 1:
-                investmentType = .Forex
-            case 2:
-                investmentType = .Fund
-            default:
-                investmentType = .Stock
-            }
-            let investmentsDetailViewController = segue.destination as! InvestmentsDetailViewController
-            
-            investmentsDetailViewController.investments = InvestmentModel.getInvestmentsByCategory(with: investmentModel!, by: investmentType)
-            investmentsDetailViewController.title = investmentType.rawValue
-        }
     }
     
     func getInvestments() {
@@ -55,38 +28,100 @@ class InvestmentsViewController: BaseViewController {
             self.dismissLoadingView()
             switch result {
             case .success(let model):
-                self.investmentModel = model
+                self.expandableInvestments = [ExpandableInvestments]()
+                self.expandableInvestments!.append(ExpandableInvestments(isExpanded: true, investments: InvestmentModel.getInvestmentsByCategory(with: model, by: .Stock)))
+                self.expandableInvestments!.append(ExpandableInvestments(isExpanded: true, investments: InvestmentModel.getInvestmentsByCategory(with: model, by: .Forex)))
+                self.expandableInvestments!.append(ExpandableInvestments(isExpanded: true, investments: InvestmentModel.getInvestmentsByCategory(with: model, by: .Fund)))
+                self.investmentsTableView.reloadData()
             case .failure(_):
                 break
             }
         }
     }
+    
 }
 
 extension InvestmentsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if investmentModel != nil {
-            return 3
+        if expandableInvestments != nil {
+            if expandableInvestments![section].isExpanded {
+                return expandableInvestments![section].investments.count
+            } else {
+                return 0
+            }
         } else {
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InvestmentTypeTableCell") as! InvestmentsTableViewCell
-        
-        if indexPath.row == 0 {
-            cell.configure(with: InvestmentCategory.Stock.rawValue)
-        } else if indexPath.row == 1 {
-            cell.configure(with: InvestmentCategory.Forex.rawValue)
-        } else if indexPath.row == 2 {
-            cell.configure(with: InvestmentCategory.Fund.rawValue)
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InvestmentsTableViewCell") as! InvestmentsTableViewCell
+        cell.configure(with: expandableInvestments![indexPath.section].investments[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return InvestmentCategory.Stock.rawValue
+        } else if section == 1 {
+            return InvestmentCategory.Forex.rawValue
+        } else if section == 2 {
+            return InvestmentCategory.Fund.rawValue
+        } else {
+            return ""
+        }
+    }
+    
+}
+
+extension InvestmentsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let stackView = UIStackView()
+        let label = UILabel()
+        let image = UIImage(named: "AsagiOk")
+        let imageView = UIImageView(image: image)
+        label.text = "\(section)"
+        stackView.addSubview(label)
+        stackView.addSubview(imageView)
+        
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        button.setTitle("Toggle", for: .normal)
+        button.tag = section
+        button.backgroundColor = .red
+        stackView.addSubview(button)
+        //return button
+        return stackView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 34
+    }
+    
+    @objc func handleExpandClose(button: UIButton) {
+        if expandableInvestments == nil {
+            return
+        }
+        
+        let section = button.tag
+        var indexPaths = [IndexPath]()
+        for row in expandableInvestments![section].investments.indices{
+            let indexPath = IndexPath(row: row, section: section)
+            indexPaths.append(indexPath)
+        }
+        
+        let isExpanded = expandableInvestments![section].isExpanded
+        expandableInvestments![section].isExpanded = !isExpanded
+        
+        if isExpanded {
+            investmentsTableView.deleteRows(at: indexPaths, with: .fade)
+        } else {
+            investmentsTableView.insertRows(at: indexPaths, with: .fade)
+        }
+    }
+    
 }

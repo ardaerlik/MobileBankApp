@@ -8,8 +8,10 @@
 import UIKit
 
 class InvestmentsTableViewCell: UITableViewCell {
-
-    @IBOutlet private weak var investmentTypeLabel: UILabel!
+    
+    @IBOutlet private weak var investmentNameLabel: UILabel!
+    @IBOutlet private weak var investmentPriceLabel: UILabel!
+    @IBOutlet private weak var investmentChangeImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +28,23 @@ class InvestmentsTableViewCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
     }
     
-    func configure(with label: String) {
-        investmentTypeLabel.text = label
+    func configure(with model: InvestmentModel) {
+        investmentNameLabel.text = model.name
+        investmentPriceLabel.text = "\(model.price ?? 0) TRY"
+        
+        var imageName: String
+        switch model.change {
+        case .Down:
+            imageName = "AsagiOk"
+        case .Same:
+            imageName = "YatayOk"
+        case .Up:
+            imageName = "YukariOk"
+        default:
+            imageName = "YatayOk"
+        }
+        
+        investmentChangeImageView.image = UIImage(named: imageName)
     }
 
 }

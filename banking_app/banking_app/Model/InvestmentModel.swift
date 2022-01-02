@@ -55,6 +55,11 @@ struct InvestmentModel {
     
 }
 
+struct ExpandableInvestments {
+    var isExpanded: Bool
+    let investments: [InvestmentModel]
+}
+
 enum InvestmentCategory: String {
     case Stock = "Stock"
     case Forex = "Forex"
