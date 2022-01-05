@@ -34,6 +34,12 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        if password.text!.isEmpty || tckn.text!.isEmpty {
+            self.errorLabel.isHidden = false
+            self.errorLabel.text = AppError.emptyInput.rawValue
+            return
+        }
+        
         NetworkManager.shared.getUserData(with: LoginModel(tckn: tckn.text, password: password.text)) { [weak self] result in
             guard let self = self else { return }
             
