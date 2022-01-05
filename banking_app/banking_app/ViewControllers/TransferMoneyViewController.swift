@@ -27,6 +27,12 @@ class TransferMoneyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUI()
+    }
+    
+    private func setUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         amountErrorLabel.isHidden = true
         transferErrorLabel.isHidden = true
         amountErrorLabel.textColor = .black

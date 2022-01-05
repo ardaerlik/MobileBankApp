@@ -17,20 +17,20 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Settings"
         setUI(with: AppSingleton.shared.userModel!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     private func setUI(with model: UserModel) {
+        self.title = "Settings"
         userNameLabel.text = model.username
         tcknLabel.text = model.tckn
         gsmLabel.text = model.gsm
         addressTextView.text = model.address
-        // TODO: Textview change input
-    }
-    
-    @IBAction func changePasswordTouched(_ sender: UIButton) {
-        // TODO: Add segue to ChangePasswordViewController
     }
     
     @IBAction func signOutTapped(_ sender: Any) {

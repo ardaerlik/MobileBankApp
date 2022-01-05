@@ -21,6 +21,8 @@ class AccountDetailViewController: UIViewController {
     }
     
     private func setUI(with model: AccountModel) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         switch model.accountType {
         case .EUR:
             accountTypeImageView.image = UIImage(named: "EUR")

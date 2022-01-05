@@ -300,7 +300,7 @@
                                 <rect key="frame" x="20" y="98" width="374" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransfersTableViewCell" rowHeight="123" id="DeF-nc-SL7" customClass="TransfersTableViewCell" customModule="banking_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TransfersTableViewCell" rowHeight="123" id="DeF-nc-SL7" customClass="TransfersTableViewCell" customModule="banking_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DeF-nc-SL7" id="fQI-2F-zTG">
@@ -835,7 +835,6 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="changePasswordTouched:" destination="2cx-0W-pna" eventType="touchUpInside" id="4fQ-sM-Ee3"/>
                                     <segue destination="l0M-Y7-X1d" kind="show" id="wys-v2-Rcj"/>
                                 </connections>
                             </button>
@@ -856,7 +855,6 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="changePasswordTouched:" destination="2cx-0W-pna" eventType="touchUpInside" id="ods-w0-w4B"/>
                                     <action selector="signOutTapped:" destination="2cx-0W-pna" eventType="touchUpInside" id="oTW-nH-gCO"/>
                                 </connections>
                             </button>
@@ -1086,7 +1084,7 @@
                                 <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvestmentsDetailTableViewCell" rowHeight="85" id="BEA-rX-xqn" customClass="InvestmentsDetailTableViewCell" customModule="banking_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InvestmentsDetailTableViewCell" rowHeight="85" id="BEA-rX-xqn" customClass="InvestmentsDetailTableViewCell" customModule="banking_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BEA-rX-xqn" id="1Q8-N7-gyd">

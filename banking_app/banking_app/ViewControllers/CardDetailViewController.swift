@@ -22,6 +22,8 @@ class CardDetailViewController: UIViewController {
     }
     
     private func setUI(with model: CardModel) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         cardTypeImageView.image = model.cardType == .masterCard ? UIImage(named: "masterCard") : UIImage(named: "visaCard")
         cardNumberLabel.text = model.cardNumber
         duePaymentLabel.text = "Due of Payment: \(model.duePayment!)"

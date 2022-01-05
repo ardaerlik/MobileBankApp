@@ -45,7 +45,8 @@ class WalletViewController: UIViewController {
     }
     
     private func setUIForInitialState() {
-        self.title = "Wallet"
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         segmentedControl.removeAllSegments()
         segmentedControl.insertSegment(withTitle: "Assets", at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: "Debts", at: 1, animated: false)

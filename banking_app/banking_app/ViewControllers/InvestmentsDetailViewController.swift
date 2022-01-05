@@ -19,9 +19,13 @@ class InvestmentsDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUI()
         investmentsDetailTableView.reloadData()
     }
-
+    
+    private func setUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 extension InvestmentsDetailViewController: UITableViewDataSource {

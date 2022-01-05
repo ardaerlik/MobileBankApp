@@ -15,14 +15,19 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        oldPasswordTextField.delegate = self
+        newPasswordTextField.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUI()
+    }
+    
+    private func setUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         errorLabel.isHidden = true
         errorLabel.textColor = .black
-        oldPasswordTextField.delegate = self
-        newPasswordTextField.delegate = self
     }
     
     @IBAction func changePassword(_ sender: UIButton) {

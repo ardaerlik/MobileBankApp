@@ -17,20 +17,25 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        errorLabel.isHidden = true
-        errorLabel.textColor = .red
-        tcknTextField.delegate = self
-        passwordTextField.delegate = self
-        tcknTextField.tag = 1
-        passwordTextField.tag = 2
-        setupToolbarForTextField()
-        initializeHideKeyboard()
+        setUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tcknTextField.delegate = self
+        passwordTextField.delegate = self
+        tcknTextField.tag = 1
+        passwordTextField.tag = 2
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setUI() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        errorLabel.isHidden = true
+        errorLabel.textColor = .red
+        setupToolbarForTextField()
+        initializeHideKeyboard()
     }
     
     @IBAction func signIn(_ sender: Any) {
