@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class SignInViewController: UIViewController {
     
@@ -61,7 +60,7 @@ class SignInViewController: UIViewController {
     
     private func setupToolbarForTextField() {
         let barForPassword = UIToolbar()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboardAndSign))
+        let doneButton = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(dismissKeyboardAndSign))
         let previousButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(previousTextField))
         previousButton.image = UIImage(systemName: "chevron.up")
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)

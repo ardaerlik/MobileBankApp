@@ -12,11 +12,14 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet private weak var oldPasswordTextField: UITextField!
     @IBOutlet private weak var newPasswordTextField: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var changePasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         oldPasswordTextField.delegate = self
         newPasswordTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -28,9 +31,18 @@ class ChangePasswordViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         errorLabel.isHidden = true
         errorLabel.textColor = .black
+        setupToolbarForTextField()
+        initializeHideKeyboard()
     }
     
-    @IBAction func changePassword(_ sender: UIButton) {
+    @IBAction func changePassword(_ sender: Any) {
+        if oldPasswordTextField.text!.isEmpty || newPasswordTextField.text!.isEmpty {
+            self.errorLabel.textColor = .red
+            self.errorLabel.text = AppError.emptyInput.rawValue
+            self.errorLabel.isHidden = false
+            return
+        }
+        
         NetworkManager.shared.changePassword(with: AppSingleton.shared.userModel!, oldPassword: oldPasswordTextField.text!, newPassword: newPasswordTextField.text!) { [weak self] result in
             guard let self = self else { return }
 
@@ -47,6 +59,61 @@ class ChangePasswordViewController: UIViewController {
                 self.errorLabel.isHidden = false
             }
         }
+    }
+    
+    private func setupToolbarForTextField() {
+        let barForOldPassword = UIToolbar()
+        let barForNewPassword = UIToolbar()
+        let nextButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(nextTextField))
+        let previousButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(previousTextField))
+        let doneButton = UIBarButtonItem(title: "Change Password", style: .plain, target: self, action: #selector(dismissKeyboardAndChangePassword))
+        nextButton.image = UIImage(systemName: "chevron.down")
+        previousButton.image = UIImage(systemName: "chevron.up")
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        barForOldPassword.items = [nextButton, flexSpace, flexSpace]
+        barForNewPassword.items = [previousButton, flexSpace, doneButton]
+        barForOldPassword.sizeToFit()
+        barForNewPassword.sizeToFit()
+        
+        oldPasswordTextField.inputAccessoryView = barForOldPassword
+        newPasswordTextField.inputAccessoryView = barForNewPassword
+    }
+    
+    private func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    @objc private func dismissKeyboardAndChangePassword() {
+        self.view.endEditing(true)
+        changePassword(self)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (changePasswordButton.frame.minY - (self.view.frame.height - keyboardSize.height))
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    @objc private func previousTextField() {
+        oldPasswordTextField.becomeFirstResponder()
+    }
+    
+    @objc private func nextTextField() {
+        newPasswordTextField.becomeFirstResponder()
     }
 }
 
