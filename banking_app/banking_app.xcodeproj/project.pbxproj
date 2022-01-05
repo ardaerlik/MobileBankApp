@@ -20,7 +20,6 @@
 		63EC201627736A3500BE15CD /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EC201527736A3500BE15CD /* DoubleExtension.swift */; };
 		63FA01002771F37600B7BAC3 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */; };
 		7F6CA7FDB49569E9421C1C34 /* Pods_banking_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7389560461CA0490470EC5 /* Pods_banking_app.framework */; };
-		C40CD9192764D1560061BB09 /* AccountsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD9182764D1540061BB09 /* AccountsDataSource.swift */; };
 		C40CD91B2764D16C0061BB09 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD91A2764D16C0061BB09 /* AccountModel.swift */; };
 		C431E14D2760DA3E00A18D31 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */; };
 		C431E14F2760DA5100A18D31 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */; };
@@ -31,7 +30,6 @@
 		C47933802773636C004B90BF /* AccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479337F2773636C004B90BF /* AccountsCollectionViewCell.swift */; };
 		C4818834277A08A600E26839 /* InvestmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */; };
 		C486177727677162000A9DCE /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177627677161000A9DCE /* CardModel.swift */; };
-		C486177927677180000A9DCE /* CardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486177827677180000A9DCE /* CardsDataSource.swift */; };
 		C4911E19277B00AF00488723 /* TransferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4911E18277B00AF00488723 /* TransferMoneyViewController.swift */; };
 		C491406C2778B1B7008B38B2 /* InvestmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406B2778B1B6008B38B2 /* InvestmentModel.swift */; };
 		C491406E277910C5008B38B2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */; };
@@ -66,7 +64,6 @@
 		63D8A470277BA5EF0050BF25 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		63EC201527736A3500BE15CD /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		63FA00FF2771F37600B7BAC3 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
-		C40CD9182764D1540061BB09 /* AccountsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsDataSource.swift; sourceTree = "<group>"; };
 		C40CD91A2764D16C0061BB09 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		C431E14C2760DA3E00A18D31 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		C431E14E2760DA5100A18D31 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		C479337F2773636C004B90BF /* AccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4818833277A08A500E26839 /* InvestmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C486177627677161000A9DCE /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
-		C486177827677180000A9DCE /* CardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSource.swift; sourceTree = "<group>"; };
 		C4911E18277B00AF00488723 /* TransferMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyViewController.swift; sourceTree = "<group>"; };
 		C491406B2778B1B6008B38B2 /* InvestmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModel.swift; sourceTree = "<group>"; };
 		C491406D277910C4008B38B2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -170,10 +166,8 @@
 		C4A26EB0275FF517009DB036 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C40CD9182764D1540061BB09 /* AccountsDataSource.swift */,
 				C40CD91A2764D16C0061BB09 /* AccountModel.swift */,
 				C486177627677161000A9DCE /* CardModel.swift */,
-				C486177827677180000A9DCE /* CardsDataSource.swift */,
 				C45BEA912768C4BB00A77542 /* FirebaseDataSourceDelegate.swift */,
 				C4644EE4276926A1002C17B9 /* UserModel.swift */,
 				634852F2276B90CE00E2FA1F /* LoginModel.swift */,
@@ -374,7 +368,6 @@
 				C4A26EB7275FF5D1009DB036 /* InvestmentsViewController.swift in Sources */,
 				C40CD91B2764D16C0061BB09 /* AccountModel.swift in Sources */,
 				C4A26EB5275FF5BB009DB036 /* SettingsViewController.swift in Sources */,
-				C486177927677180000A9DCE /* CardsDataSource.swift in Sources */,
 				C491406C2778B1B7008B38B2 /* InvestmentModel.swift in Sources */,
 				634852F3276B90CE00E2FA1F /* LoginModel.swift in Sources */,
 				C4644EE5276926A1002C17B9 /* UserModel.swift in Sources */,
@@ -390,7 +383,6 @@
 				63FA01002771F37600B7BAC3 /* TransactionModel.swift in Sources */,
 				63AF409A276D65D100E18E99 /* DateExtension.swift in Sources */,
 				C4A26EB9275FF5E1009DB036 /* TransfersViewController.swift in Sources */,
-				C40CD9192764D1560061BB09 /* AccountsDataSource.swift in Sources */,
 				C4A26EB3275FF5A4009DB036 /* MainViewController.swift in Sources */,
 				C431E1582760DC0C00A18D31 /* InvestmentsDetailTableViewCell.swift in Sources */,
 			);

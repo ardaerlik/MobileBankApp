@@ -25,7 +25,7 @@ class InvestmentsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Investments"
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
