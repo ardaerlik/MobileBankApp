@@ -56,9 +56,6 @@ class NetworkManager {
                 for document in snapshot!.documents {
                     let data = document.data()
                     var transactionModel = TransactionModel(with: data)
-//                    transactionModel.receiverTCKN = data["receiverTCKN"] as? String
-//                    transactionModel.senderTCKN = data["senderTCKN"] as? String
-//                    transactionModel.amount = data["amount"] as? Double
                     transactionModel.transferId = document.documentID
                     transfers.append(transactionModel)
                 }
@@ -74,9 +71,6 @@ class NetworkManager {
                 for document in snapshot!.documents {
                     let data = document.data()
                     var transactionModel = TransactionModel(with: data)
-//                    transactionModel.receiverTCKN = data["receiverTCKN"] as? String
-//                    transactionModel.senderTCKN = data["senderTCKN"] as? String
-//                    transactionModel.amount = data["amount"] as? Double
                     transactionModel.transferId = document.documentID
                     transfers.append(transactionModel)
                 }
@@ -137,195 +131,14 @@ class NetworkManager {
         }
     }
     
-//    func getUsersJSON(completion: @escaping (Result<[UserNetwork], AppError>) -> Void) {
-//        let urlSession = URLSession(configuration: .default)
-//        if let url = URL(string: "https://ardaerlik.me/mobilebankapp/users") {
-//            var urlRequest = URLRequest(url: url)
-//            urlRequest.httpMethod = "GET"
-//            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
-//                if let data = data {
-//                    let decoder = JSONDecoder()
-//                    let userArrayFromJSON = try! decoder.decode([UserNetwork].self, from: data)
-//                    DispatchQueue.main.async {
-//                        completion(.success(userArrayFromJSON))
-//                    }
-//                }
-//            }
-//            dataTask.resume()
-//        }
-//    }
-//
-//    func getAccountsJSON(completion: @escaping (Result<[AccountNetwork], AppError>) -> Void) {
-//        let urlSession = URLSession(configuration: .default)
-//        if let url = URL(string: "https://ardaerlik.me/mobilebankapp/accounts") {
-//            var urlRequest = URLRequest(url: url)
-//            urlRequest.httpMethod = "GET"
-//            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
-//                if let data = data {
-//                    let decoder = JSONDecoder()
-//                    let accountArrayFromJSON = try! decoder.decode([AccountNetwork].self, from: data)
-//                    DispatchQueue.main.async {
-//                        completion(.success(accountArrayFromJSON))
-//                    }
-//                }
-//            }
-//            dataTask.resume()
-//        }
-//    }
-//
-//    func getCardsJSON(completion: @escaping (Result<[CardNetwork], AppError>) -> Void) {
-//        let urlSession = URLSession(configuration: .default)
-//        if let url = URL(string: "https://ardaerlik.me/mobilebankapp/cards") {
-//            var urlRequest = URLRequest(url: url)
-//            urlRequest.httpMethod = "GET"
-//            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
-//                if let data = data {
-//                    let decoder = JSONDecoder()
-//                    let cardArrayFromJSON = try! decoder.decode([CardNetwork].self, from: data)
-//                    DispatchQueue.main.async {
-//                        completion(.success(cardArrayFromJSON))
-//                    }
-//                }
-//            }
-//            dataTask.resume()
-//        }
-//    }
-//
-//    func getWorthsJSON(completion: @escaping (Result<[WorthNetwork], AppError>) -> Void) {
-//        let urlSession = URLSession(configuration: .default)
-//        if let url = URL(string: "https://ardaerlik.me/mobilebankapp/worth") {
-//            var urlRequest = URLRequest(url: url)
-//            urlRequest.httpMethod = "GET"
-//            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
-//                if let data = data {
-//                    let decoder = JSONDecoder()
-//                    let worthArrayFromJSON = try! decoder.decode([WorthNetwork].self, from: data)
-//                    DispatchQueue.main.async {
-//                        completion(.success(worthArrayFromJSON))
-//                    }
-//                }
-//            }
-//            dataTask.resume()
-//        }
-//    }
-//
-//    func updateDatabase(users: [UserNetwork], accounts: [AccountNetwork], cards: [CardNetwork], worths: [WorthNetwork]) {
-//        var accountsTmp = accounts
-//        var cardsTmp = cards
-//        var i = 0
-//        for user in users {
-//            if i > 120 {
-//                break
-//            }
-//            var selectedAccounts = [[String: Any]]()
-//            var selectedCards = [[String: Any]]()
-//            for _ in 0...6 {
-//                let tmp1 = accountsTmp.popLast()
-//                selectedAccounts.append(["accountNumber": tmp1?.accountNumber,
-//                                         "accountType": tmp1?.accountType,
-//                                         "usableAmount": tmp1?.usableAmount])
-//
-//                let tmp2 = cardsTmp.popLast()
-//                selectedCards.append(["cardNumber": tmp2?.cardNumber,
-//                                      "currentDebt": tmp2?.currentDebt,
-//                                      "duePayment": Timestamp(),
-//                                      "isVisa": tmp2?.isVisa,
-//                                      "usableLimit": tmp2?.usableLimit])
-//            }
-//
-//            db.collection("users").document(user.tckn).setData([
-//                "Address": user.Address,
-//                "GSM": user.GSM,
-//                "NameSurname": user.NameSurname,
-//                "password": user.password,
-//                "avatar": user.Avatar,
-//                "email": user.Email,
-//                "occupation": user.Occupation,
-//                "company": user.Workplace,
-//                "worth": ["assets": ["bonds": worths[i].bonds,
-//                                     "funds": worths[i].funds,
-//                                     "stocks": worths[i].stocks],
-//                          "debts": ["currency": "TRY",
-//                                    "totalDebtsAmount": worths[i].totalDebtsAmount],
-//                          "netWorth": worths[i].netWorth,
-//                          "totalDebt": worths[i].totalDebt,
-//                          "totalWorth": worths[i].totalWorth],
-//                "accounts": selectedAccounts,
-//                "cards": selectedCards
-//            ]) { err in
-//                if let err = err {
-//                    print("\(err)      \(i)")
-//                }
-//            }
-//            i += 1
-//        }
-//    }
-//
-//    func deleteFiles() {
-//        db.collection("users").getDocuments { snapshot, error in
-//            if (snapshot?.documents) != nil {
-//                for document in snapshot!.documents {
-//                    if document.documentID == "potato" {
-//                        continue
-//                    }
-//                    if let a = (document.data()["accounts"] as? [[String: Any?]])?[6]["accountNumber"],
-//                       let b = (document.data()["cards"] as? [[String: Any?]])?[6]["cardNumber"] {
-//                        self.db.collection("users").document(document.documentID).delete()
-//                        print("DELETED \(document.documentID)")
-//                    }
-//                }
-//                print("\(snapshot?.count)")
-//            }
-//        }
-//    }
-//
-//    func updateTransfer() {
-//        db.collection("users").getDocuments { snapshot, error in
-//            if (snapshot?.documents) != nil {
-//                var documentIds = [String]()
-//                for document in snapshot!.documents {
-//                    documentIds.append(document.documentID)
-//                }
-//
-//                var transfers = [TransferNetwork]()
-//                for i in 0...1000 {
-//                    var randomInt1 = Int.random(in: 0..<documentIds.count)
-//                    var randomInt2 = Int.random(in: 0..<documentIds.count)
-//                    let randomAmount = Double.random(in: 0.0...20000.0)
-//                    if randomInt1 == randomInt2 {
-//                        randomInt2 = Int.random(in: 0..<documentIds.count)
-//                        transfers.append(TransferNetwork(receiver: documentIds[randomInt1], sender: documentIds[randomInt2], amount: randomAmount))
-//                    } else {
-//                        transfers.append(TransferNetwork(receiver: documentIds[randomInt1], sender: documentIds[randomInt2], amount: randomAmount))
-//                    }
-//                }
-//
-//                for transfer in transfers {
-//                    self.db.collection("transfers").addDocument(data: ["amount": transfer.amount,
-//                                                                  "receiverTCKN": transfer.receiver,
-//                                                                  "senderTCKN": transfer.sender])
-//                }
-//            }
-//        }
-//    }
-//
-//    func deleteTransfers() {
-//        db.collection("transfers").getDocuments { snapshot, error in
-//            if let data = snapshot?.documents {
-//                print("\(snapshot!.count)")
-//            }
-//        }
-//    }
-    
-    func makeTransfer(with model: TransactionModel, completion: @escaping (Result<TransactionModel, TransferError>) -> Void) {
-        // MARK: TODO (Make Transfer)
+    func makeTransfer(with model: TransactionModel, completion: @escaping (Result<String, TransferError>) -> Void) {
+        var senderAccount: AccountModel?
+        var receiverAccount: AccountModel?
+
         for account in AppSingleton.shared.userModel!.accounts {
             if account.accountNumber == model.senderAccount {
-                if model.amount! > account.usableAmount! {
+                senderAccount = account
+                if model.amount! > senderAccount!.usableAmount! {
                     completion(.failure(TransferError.insufficientBalance))
                     return
                 } else {
@@ -335,97 +148,57 @@ class NetworkManager {
         }
         
         db.collection("users").document(model.receiverTCKN!).getDocument { snapshot, error in
-            if !(snapshot?.exists ?? false) {
-                completion(.failure(TransferError.invalidTckn))
-                return
-            }
-
             if let data = snapshot?.data(),
                let accounts = data["accounts"] as? [[String: Any]] {
                 var receiverAccounts = [AccountModel]()
                 
-                accounts.forEach { receiverAccounts.append(AccountModel(with: $0))}
+                accounts.forEach { receiverAccounts.append(AccountModel(with: $0)) }
                 
                 var receiverExists = false
-                for var receiver in receiverAccounts {
+                for receiver in receiverAccounts {
                     if receiver.accountNumber == model.receiverAccount {
-                        // TODO: Account type kontrol et
-                        receiver.usableAmount! += model.amount!
+                        receiverAccount = receiver
                         receiverExists = true
                         break
                     }
                 }
                 
-                if !receiverExists {
+                if receiverExists {
+                    if receiverAccount?.accountType != senderAccount?.accountType {
+                        completion(.failure(TransferError.invalidAccountType))
+                        return
+                    }
+                } else {
                     completion(.failure(TransferError.invalidIban))
                     return
                 }
                 
-                self.db.collection("users").document(model.receiverTCKN!).updateData(["accounts": receiverAccounts]) { error2 in
-                    if error2 != nil {
-                        completion(.failure(TransferError.databaseError))
-                        return
+                var receiverAccountsToDb = [[String: Any?]]()
+                var senderAccountsToDb = [[String: Any?]]()
+                
+                for var receiverAccountToDb in receiverAccounts {
+                    if receiverAccountToDb.accountNumber! == receiverAccount?.accountNumber! {
+                        receiverAccountToDb.usableAmount! += model.amount!
                     }
-                    
-//                    self.db.collection("users").document(model.senderTCKN!).updateData(<#T##fields: [AnyHashable : Any]##[AnyHashable : Any]#>) { error3 in
-//
-//                    }
+                    receiverAccountsToDb.append(["accountNumber": receiverAccountToDb.accountNumber, "accountType": receiverAccountToDb.accountType?.rawValue, "usableAmount": receiverAccountToDb.usableAmount])
                 }
+                
+                for var senderAccountToDb in AppSingleton.shared.userModel!.accounts {
+                    if senderAccountToDb.accountNumber! == senderAccount?.accountNumber! {
+                        senderAccountToDb.usableAmount! -= model.amount!
+                    }
+                    senderAccountsToDb.append(["accountNumber": senderAccountToDb.accountNumber, "accountType": senderAccountToDb.accountType?.rawValue, "usableAmount": senderAccountToDb.usableAmount])
+                }
+                
+                self.db.collection("users").document(model.senderTCKN!).updateData(["accounts": senderAccountsToDb])
+                self.db.collection("users").document(model.receiverTCKN!).updateData(["accounts": receiverAccountsToDb])
+                let transferReference = self.db.collection("transfers").addDocument(data: ["amount": model.amount!, "receiverTCKN": model.receiverTCKN!, "senderTCKN": model.senderTCKN!])
+
+                completion(.success(transferReference.documentID))
             } else {
-                completion(.failure(TransferError.databaseError))
+                completion(.failure(TransferError.invalidTckn))
             }
         }
     }
     
 }
-
-//struct StockNetwork: Decodable {
-//    var change: String
-//    var price: Double
-//    var name: String
-//}
-//
-//struct UserNetwork: Decodable {
-//    var street: String
-//    var city: String
-//    var country: String
-//    var Address: String
-//    var Avatar: String
-//    var GSM: String
-//    var NameSurname: String
-//    var Email: String
-//    var password: String
-//    var Occupation: String
-//    var Workplace: String
-//    var tckn: String
-//}
-//
-//struct AccountNetwork: Decodable {
-//    var accountNumber: String
-//    var accountType: String
-//    var usableAmount: Double
-//}
-//
-//struct CardNetwork: Decodable {
-//    var cardNumber: String
-//    var currentDebt: Double
-//    var isVisa: Bool
-//    var usableLimit: Double
-//}
-//
-//struct WorthNetwork: Decodable {
-//    var bonds: Double
-//    var funds: Double
-//    var stocks: Double
-//    var totalDebtsAmount: Double
-//    var totalWorth: Double
-//    var totalDebt: Double
-//    var netWorth: Double
-//}
-//
-//struct TransferNetwork {
-//    var receiver: String
-//    var sender: String
-//    var amount: Double
-//}
-

@@ -20,5 +20,6 @@ enum TransferError: String, Error {
     case insufficientBalance = "Your account has an insufficient balance."
     case invalidTckn = "Invalid TCKN. Please try again."
     case invalidIban = "Invalid IBAN. Please try again."
+    case invalidAccountType = "Invalid account type. Please try again with another account "
     case databaseError = "Database error occured"
 }

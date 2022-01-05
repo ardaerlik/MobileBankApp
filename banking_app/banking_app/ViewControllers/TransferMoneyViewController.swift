@@ -41,21 +41,14 @@ class TransferMoneyViewController: UIViewController {
         
         let transferDictionary: [String: Any] = ["receiverTCKN": receiverTckn, "receiverAccount": receiverAccountIban, "senderTCKN": AppSingleton.shared.userModel?.tckn ?? "", "senderAccount": senderAccountIban, "amount": amount]
         
-        NetworkManager.shared.makeTransfer(with: TransactionModel(with: transferDictionary)) { [weak self] result in
+        NetworkManager.shared.makeTransfer(with: TransactionModel(outgoing: transferDictionary)) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
-            case .success(let transaction):
+            case .success(let transactionId):
                 self.transferErrorLabel.textColor = .green
-                self.transferErrorLabel.text = "Transaction has made succesfully\nID: \(transaction.transferId ?? "")"
+                self.transferErrorLabel.text = "Transaction has made succesfully\nID: \(transactionId)"
                 self.transferErrorLabel.isHidden = false
-                
-                for var account in AppSingleton.shared.userModel!.accounts {
-                    if account.accountNumber == transaction.senderAccount {
-                        account.usableAmount! -= transaction.amount!
-                        break
-                    }
-                }
             case .failure(let errorType):
                 self.transferErrorLabel.textColor = .red
                 self.transferErrorLabel.text = errorType.rawValue
@@ -72,6 +65,11 @@ extension TransferMoneyViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         // TODO: text field
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }
 

@@ -14,7 +14,6 @@ class MainViewController: BaseViewController {
     @IBOutlet private weak var cardsCollectionView: UICollectionView!
     @IBOutlet private weak var accountsCollectionView: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
