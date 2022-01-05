@@ -13,6 +13,7 @@ class SignInViewController: UIViewController {
     @IBOutlet private weak var tckn: UITextField!
     @IBOutlet private weak var password: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var signInButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,6 +29,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -47,7 +50,7 @@ class SignInViewController: UIViewController {
     
     private func setupToolbarForTextField() {
         let barForPassword = UIToolbar()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboard))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboardAndSign))
         let previousButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(previousTextField))
         previousButton.image = UIImage(systemName: "chevron.up")
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -72,13 +75,30 @@ class SignInViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc private func dismissKeyboardAndSign() {
+        self.view.endEditing(true)
+        signIn(self)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -=  (signInButton.frame.minY - (self.view.frame.height - keyboardSize.height))
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
     @objc private func previousTextField() {
-        //password.resignFirstResponder()
         tckn.becomeFirstResponder()
     }
     
     @objc private func nextTextField() {
-        //tckn.resignFirstResponder()
         password.becomeFirstResponder()
     }
 }

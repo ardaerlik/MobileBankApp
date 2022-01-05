@@ -14,6 +14,7 @@ enum AppError: String, Error {
     case databaseUpdateError = "Database has not been updated. Please try again."
     case investmentsError = "Investments info has not fetched"
     case transfersError = "Transfers info has not fetched"
+    case emptyInput = "Please enter a non-blank value"
 }
 
 enum TransferError: String, Error {
