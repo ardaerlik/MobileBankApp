@@ -664,6 +664,11 @@
                                     <constraint firstAttribute="width" constant="240" id="lPh-nc-hzq"/>
                                     <constraint firstItem="FFj-Qb-OHd" firstAttribute="centerX" secondItem="CMY-b2-GdJ" secondAttribute="centerX" id="vKx-3z-vQ7"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-fm-7ym" userLabel="Usable Amount Label">
                                 <rect key="frame" x="30" y="320" width="354" height="21"/>
