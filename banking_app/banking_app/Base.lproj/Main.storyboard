@@ -92,9 +92,9 @@
                     <navigationItem key="navigationItem" id="ZLI-BC-WQS"/>
                     <connections>
                         <outlet property="errorLabel" destination="Xgd-FA-ef8" id="RpR-ua-rNg"/>
-                        <outlet property="password" destination="mhP-29-RuE" id="KWL-v8-qi1"/>
+                        <outlet property="passwordTextField" destination="mhP-29-RuE" id="KWL-v8-qi1"/>
                         <outlet property="signInButton" destination="Irg-yw-eo3" id="TAK-1v-84Z"/>
-                        <outlet property="tckn" destination="fxM-xX-8Qh" id="CjI-6J-8gB"/>
+                        <outlet property="tcknTextField" destination="fxM-xX-8Qh" id="CjI-6J-8gB"/>
                         <segue destination="f0n-Wn-nsR" kind="show" identifier="showTabbar" id="UUg-J5-f23"/>
                     </connections>
                 </viewController>

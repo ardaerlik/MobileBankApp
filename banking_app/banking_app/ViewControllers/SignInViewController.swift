@@ -10,8 +10,8 @@ import Firebase
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet private weak var tckn: UITextField!
-    @IBOutlet private weak var password: UITextField!
+    @IBOutlet private weak var tcknTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
     @IBOutlet private weak var signInButton: UIButton!
     
@@ -19,10 +19,10 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         errorLabel.isHidden = true
         errorLabel.textColor = .red
-        tckn.delegate = self
-        password.delegate = self
-        tckn.tag = 1
-        password.tag = 2
+        tcknTextField.delegate = self
+        passwordTextField.delegate = self
+        tcknTextField.tag = 1
+        passwordTextField.tag = 2
         setupToolbarForTextField()
         initializeHideKeyboard()
     }
@@ -34,13 +34,13 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
-        if password.text!.isEmpty || tckn.text!.isEmpty {
+        if passwordTextField.text!.isEmpty || tcknTextField.text!.isEmpty {
             self.errorLabel.isHidden = false
             self.errorLabel.text = AppError.emptyInput.rawValue
             return
         }
         
-        NetworkManager.shared.getUserData(with: LoginModel(tckn: tckn.text, password: password.text)) { [weak self] result in
+        NetworkManager.shared.getUserData(with: LoginModel(tckn: tcknTextField.text, password: passwordTextField.text)) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -62,14 +62,14 @@ class SignInViewController: UIViewController {
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         barForPassword.items = [previousButton, flexSpace, doneButton]
         barForPassword.sizeToFit()
-        password.inputAccessoryView = barForPassword
+        passwordTextField.inputAccessoryView = barForPassword
         
         let barForTckn = UIToolbar()
         let nextButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(nextTextField))
         nextButton.image = UIImage(systemName: "chevron.down")
         barForTckn.items = [nextButton, flexSpace, flexSpace]
         barForTckn.sizeToFit()
-        tckn.inputAccessoryView = barForTckn
+        tcknTextField.inputAccessoryView = barForTckn
     }
     
     private func initializeHideKeyboard() {
@@ -101,11 +101,11 @@ class SignInViewController: UIViewController {
     }
     
     @objc private func previousTextField() {
-        tckn.becomeFirstResponder()
+        tcknTextField.becomeFirstResponder()
     }
     
     @objc private func nextTextField() {
-        password.becomeFirstResponder()
+        passwordTextField.becomeFirstResponder()
     }
 }
 

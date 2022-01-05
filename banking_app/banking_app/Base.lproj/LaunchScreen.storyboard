@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,28 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KB" translatesAutoresizingMaskIntoConstraints="NO" id="kOL-cu-Tzq" userLabel="Company Logo">
-                                <rect key="frame" x="117" y="248.5" width="180" height="209"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KB" translatesAutoresizingMaskIntoConstraints="NO" id="kOL-cu-Tzq" userLabel="KB Image View">
+                                <rect key="frame" x="82" y="268" width="250" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="4gI-ak-nRp"/>
-                                    <constraint firstAttribute="height" constant="209" id="ete-oy-ONe"/>
+                                    <constraint firstAttribute="width" constant="250" id="EIV-m9-evG"/>
+                                    <constraint firstAttribute="height" constant="170" id="vFY-Me-Sdh"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KB_YAZI" translatesAutoresizingMaskIntoConstraints="NO" id="Ait-m2-PKj">
-                                <rect key="frame" x="96" y="472.5" width="222" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="HXN-bC-ykn"/>
-                                    <constraint firstAttribute="width" constant="222" id="Hr9-V5-IIY"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KOC BANK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGs-V1-FYt" userLabel="Bank Name Label">
+                                <rect key="frame" x="96" y="458" width="222" height="40"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ait-m2-PKj" firstAttribute="top" secondItem="kOL-cu-Tzq" secondAttribute="bottom" constant="15" id="75a-uL-yQF"/>
-                            <constraint firstItem="Ait-m2-PKj" firstAttribute="centerX" secondItem="kOL-cu-Tzq" secondAttribute="centerX" id="K0S-Dz-UfK"/>
+                            <constraint firstItem="iGs-V1-FYt" firstAttribute="top" secondItem="kOL-cu-Tzq" secondAttribute="bottom" constant="20" id="579-aq-uUV"/>
                             <constraint firstItem="kOL-cu-Tzq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MNl-mR-47u"/>
                             <constraint firstItem="kOL-cu-Tzq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-100" id="XWe-wI-rNx"/>
+                            <constraint firstItem="iGs-V1-FYt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gdw-OV-FeZ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -48,7 +47,6 @@
     </scenes>
     <resources>
         <image name="KB" width="289" height="174"/>
-        <image name="KB_YAZI" width="288" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
