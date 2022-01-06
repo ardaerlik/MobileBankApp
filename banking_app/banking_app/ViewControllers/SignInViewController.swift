@@ -19,6 +19,12 @@ class SignInViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tcknTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tcknTextField.delegate = self
@@ -38,6 +44,8 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        dismissKeyboard()
+        
         if passwordTextField.text!.isEmpty || tcknTextField.text!.isEmpty {
             self.errorLabel.isHidden = false
             self.errorLabel.text = AppError.emptyInput.rawValue
@@ -86,14 +94,13 @@ class SignInViewController: UIViewController {
     }
     
     @objc private func dismissKeyboardAndSign() {
-        self.view.endEditing(true)
         signIn(self)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -=  (signInButton.frame.minY - (self.view.frame.height - keyboardSize.height))
+                self.view.frame.origin.y -=  (signInButton.frame.maxY - (self.view.frame.height - keyboardSize.height) + 10)
             }
         }
     }

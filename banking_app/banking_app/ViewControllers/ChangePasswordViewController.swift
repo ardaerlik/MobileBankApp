@@ -27,6 +27,12 @@ class ChangePasswordViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        oldPasswordTextField.text = ""
+        newPasswordTextField.text = ""
+    }
+    
     private func setUI() {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         errorLabel.isHidden = true

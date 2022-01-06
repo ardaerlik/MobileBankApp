@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TCKN" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fxM-xX-8Qh" userLabel="Tckn Text Field">
-                                <rect key="frame" x="50" y="476" width="314" height="40"/>
+                                <rect key="frame" x="50" y="446" width="314" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mUC-XK-BsJ"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhP-29-RuE" userLabel="Password Text Field">
-                                <rect key="frame" x="50" y="536" width="314" height="40"/>
+                                <rect key="frame" x="50" y="506" width="314" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kTT-lI-he8"/>
                                 </constraints>
@@ -34,7 +34,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irg-yw-eo3">
-                                <rect key="frame" x="50" y="636" width="314" height="40"/>
+                                <rect key="frame" x="50" y="566" width="314" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tje-8o-bZf"/>
                                 </constraints>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Xgd-FA-ef8">
-                                <rect key="frame" x="207" y="706" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="636" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                             <constraint firstItem="mhP-29-RuE" firstAttribute="top" secondItem="fxM-xX-8Qh" secondAttribute="bottom" constant="20" id="9jL-8O-P5r"/>
                             <constraint firstItem="mhP-29-RuE" firstAttribute="leading" secondItem="Tfb-Pb-m17" secondAttribute="leading" constant="50" id="KC9-ek-VYq"/>
                             <constraint firstItem="M1F-9G-fpR" firstAttribute="top" secondItem="Tfb-Pb-m17" secondAttribute="top" constant="100" id="NVp-cZ-9oF"/>
-                            <constraint firstItem="fxM-xX-8Qh" firstAttribute="top" secondItem="Ldz-H2-zfB" secondAttribute="bottom" constant="100" id="SOG-95-umY"/>
+                            <constraint firstItem="fxM-xX-8Qh" firstAttribute="top" secondItem="Ldz-H2-zfB" secondAttribute="bottom" constant="70" id="SOG-95-umY"/>
                             <constraint firstItem="fxM-xX-8Qh" firstAttribute="leading" secondItem="Tfb-Pb-m17" secondAttribute="leading" constant="50" id="WhB-ie-TxD"/>
                             <constraint firstItem="Xgd-FA-ef8" firstAttribute="centerX" secondItem="Irg-yw-eo3" secondAttribute="centerX" id="Xgn-u8-kGx"/>
                             <constraint firstItem="Ldz-H2-zfB" firstAttribute="top" secondItem="M1F-9G-fpR" secondAttribute="bottom" constant="20" id="beM-nP-cBc"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="Irg-yw-eo3" firstAttribute="centerX" secondItem="Tfb-Pb-m17" secondAttribute="centerX" id="ha7-Dl-FqH"/>
                             <constraint firstItem="Xgd-FA-ef8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="saq-yn-xjl" secondAttribute="leading" constant="10" id="jzI-ml-eUR"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xgd-FA-ef8" secondAttribute="trailing" constant="10" id="oEI-Lm-YF2"/>
-                            <constraint firstItem="Irg-yw-eo3" firstAttribute="top" secondItem="mhP-29-RuE" secondAttribute="bottom" constant="60" id="p50-P5-loN"/>
+                            <constraint firstItem="Irg-yw-eo3" firstAttribute="top" secondItem="mhP-29-RuE" secondAttribute="bottom" constant="20" id="p50-P5-loN"/>
                             <constraint firstItem="M1F-9G-fpR" firstAttribute="centerX" secondItem="Tfb-Pb-m17" secondAttribute="centerX" id="tl6-iH-7oN"/>
                             <constraint firstItem="Tfb-Pb-m17" firstAttribute="trailing" secondItem="fxM-xX-8Qh" secondAttribute="trailing" constant="50" id="tqr-d6-RGC"/>
                             <constraint firstItem="Tfb-Pb-m17" firstAttribute="trailing" secondItem="mhP-29-RuE" secondAttribute="trailing" constant="50" id="vyP-Y8-eBS"/>
@@ -113,17 +113,17 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the account IBAN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wgt-4i-HuG" userLabel="Receiver IBAN Text Field">
                                 <rect key="frame" x="20" y="328" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your receiver TCKN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gwz-Lo-sce" userLabel="Receiver Tckn Text Field">
                                 <rect key="frame" x="20" y="413" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the amount of transfer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tog-VT-i1V" userLabel="Amount Text Field">
                                 <rect key="frame" x="20" y="548" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbO-tY-7Aa" userLabel="Sender Account Picker View">
                                 <rect key="frame" x="20" y="150" width="374" height="74"/>
@@ -204,14 +204,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga5-VD-TkG" userLabel="Amount Error Label">
-                                <rect key="frame" x="20" y="612" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghf-dB-7Xe" userLabel="Make Transfer Button">
-                                <rect key="frame" x="20" y="774" width="374" height="49"/>
+                                <rect key="frame" x="20" y="607" width="374" height="50"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Make Transfer">
                                     <backgroundConfiguration key="background" cornerRadius="15">
@@ -224,8 +218,8 @@
                                     <action selector="makeTransferButtonTouched:" destination="LnO-ci-CLA" eventType="touchUpInside" id="a49-9a-hbJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiN-Hv-gek" userLabel="Transfer Error Label">
-                                <rect key="frame" x="20" y="663" width="374" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiN-Hv-gek" userLabel="Transfer Error Label">
+                                <rect key="frame" x="20" y="685" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -247,6 +241,7 @@
                             <constraint firstItem="4vo-0P-syV" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="HkQ-7d-8EL"/>
                             <constraint firstItem="15h-I0-Cyf" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" id="HsK-Ah-bfe"/>
                             <constraint firstItem="Wgt-4i-HuG" firstAttribute="top" secondItem="4vo-0P-syV" secondAttribute="bottom" constant="10" id="IuB-NO-f3j"/>
+                            <constraint firstItem="jiN-Hv-gek" firstAttribute="top" secondItem="Ghf-dB-7Xe" secondAttribute="bottom" constant="40" id="J9g-1m-1ra"/>
                             <constraint firstItem="uWe-HU-SHp" firstAttribute="centerX" secondItem="YBb-Tc-lJi" secondAttribute="centerX" id="KAd-2D-Kuk"/>
                             <constraint firstItem="tog-VT-i1V" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="Le6-CH-mha"/>
                             <constraint firstItem="15h-I0-Cyf" firstAttribute="centerX" secondItem="YBb-Tc-lJi" secondAttribute="centerX" id="R1k-Pj-Pv7"/>
@@ -254,29 +249,25 @@
                             <constraint firstItem="YBb-Tc-lJi" firstAttribute="trailing" secondItem="LbO-tY-7Aa" secondAttribute="trailing" constant="20" id="TFj-Bi-M6U"/>
                             <constraint firstItem="YBb-Tc-lJi" firstAttribute="trailing" secondItem="uWe-HU-SHp" secondAttribute="trailing" id="UPb-Ms-OnK"/>
                             <constraint firstItem="tGv-Lf-YFt" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="WfI-qS-FTS"/>
-                            <constraint firstItem="YBb-Tc-lJi" firstAttribute="trailing" secondItem="Ga5-VD-TkG" secondAttribute="trailing" constant="20" id="WtA-wu-awJ"/>
                             <constraint firstItem="tog-VT-i1V" firstAttribute="top" secondItem="Gqe-JZ-Whz" secondAttribute="bottom" constant="10" id="Yw5-Dn-0Qs"/>
                             <constraint firstItem="YBb-Tc-lJi" firstAttribute="trailing" secondItem="tog-VT-i1V" secondAttribute="trailing" constant="20" id="ZaB-HU-E6k"/>
-                            <constraint firstItem="Ga5-VD-TkG" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="a81-cg-8sv"/>
-                            <constraint firstItem="Ghf-dB-7Xe" firstAttribute="top" secondItem="jiN-Hv-gek" secondAttribute="bottom" constant="75" id="aaG-6d-RGN"/>
                             <constraint firstItem="uWe-HU-SHp" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" id="all-3d-TPb"/>
                             <constraint firstItem="LbO-tY-7Aa" firstAttribute="top" secondItem="15h-I0-Cyf" secondAttribute="bottom" constant="20" id="bLh-cJ-cAJ"/>
                             <constraint firstItem="jiN-Hv-gek" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="bkz-Va-O1m"/>
                             <constraint firstItem="a1F-WP-fkP" firstAttribute="top" secondItem="LbO-tY-7Aa" secondAttribute="bottom" constant="20" id="ebf-Bu-UKS"/>
+                            <constraint firstItem="Ghf-dB-7Xe" firstAttribute="top" secondItem="tog-VT-i1V" secondAttribute="bottom" constant="25" id="iCI-Se-eEz"/>
                             <constraint firstItem="tGv-Lf-YFt" firstAttribute="top" secondItem="Wgt-4i-HuG" secondAttribute="bottom" constant="20" id="iPq-ff-Tes"/>
                             <constraint firstItem="YBb-Tc-lJi" firstAttribute="trailing" secondItem="Ghf-dB-7Xe" secondAttribute="trailing" constant="20" id="jRq-8x-aaA"/>
                             <constraint firstItem="Wgt-4i-HuG" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="nui-uX-TsE"/>
                             <constraint firstItem="YBb-Tc-lJi" firstAttribute="trailing" secondItem="15h-I0-Cyf" secondAttribute="trailing" id="p7d-Mu-ffI"/>
-                            <constraint firstItem="jiN-Hv-gek" firstAttribute="top" secondItem="Ga5-VD-TkG" secondAttribute="bottom" constant="20" id="pG0-1L-QX0"/>
+                            <constraint firstItem="a1F-WP-fkP" firstAttribute="centerX" secondItem="YBb-Tc-lJi" secondAttribute="centerX" id="pRZ-71-bGp"/>
                             <constraint firstItem="Ghf-dB-7Xe" firstAttribute="leading" secondItem="YBb-Tc-lJi" secondAttribute="leading" constant="20" id="qVm-9w-5dv"/>
-                            <constraint firstItem="Ga5-VD-TkG" firstAttribute="top" secondItem="tog-VT-i1V" secondAttribute="bottom" constant="30" id="sWZ-la-ukr"/>
                             <constraint firstItem="Gwz-Lo-sce" firstAttribute="top" secondItem="tGv-Lf-YFt" secondAttribute="bottom" constant="10" id="tEh-Df-DmH"/>
                             <constraint firstItem="uWe-HU-SHp" firstAttribute="top" secondItem="Gwz-Lo-sce" secondAttribute="bottom" constant="20" id="uV0-ij-hk8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Make Transfer" id="BtB-mi-bQC"/>
                     <connections>
-                        <outlet property="amountErrorLabel" destination="Ga5-VD-TkG" id="ZTm-o9-NSa"/>
                         <outlet property="receiverAccountIbanTextField" destination="Wgt-4i-HuG" id="Vg6-lU-MeZ"/>
                         <outlet property="receiverTcknTextField" destination="Gwz-Lo-sce" id="HJO-zn-M3n"/>
                         <outlet property="senderAccountPickerView" destination="LbO-tY-7Aa" id="pM7-eS-6AW"/>
@@ -821,8 +812,8 @@
                                     <outlet property="delegate" destination="2cx-0W-pna" id="M3M-5g-ta6"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-7P-rj8" userLabel="Change Password">
-                                <rect key="frame" x="58" y="653" width="298" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-7P-rj8" userLabel="Change Password">
+                                <rect key="frame" x="58" y="653" width="298" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="lgh-61-QNR"/>
                                 </constraints>
@@ -841,8 +832,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jh0-PD-2R7" userLabel="Avatar">
                                 <rect key="frame" x="82" y="88.5" width="250" height="202"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-q4-dS2" userLabel="Change Password">
-                                <rect key="frame" x="58" y="718" width="298" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q71-q4-dS2" userLabel="Change Password">
+                                <rect key="frame" x="58" y="718" width="298" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ljE-uX-krU"/>
                                 </constraints>
@@ -925,12 +916,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your old password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-lD-Moq">
                                 <rect key="frame" x="20" y="293" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Gd-4u-Ike">
                                 <rect key="frame" x="20" y="446" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNQ-CB-HAL" userLabel="New Password Label">
                                 <rect key="frame" x="20" y="377" width="152.5" height="29"/>
@@ -939,7 +930,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-Nn-O0e">
-                                <rect key="frame" x="20" y="521" width="374" height="57"/>
+                                <rect key="frame" x="20" y="521" width="374" height="50"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change Password">
                                     <backgroundConfiguration key="background" cornerRadius="14">
