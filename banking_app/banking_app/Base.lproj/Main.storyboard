@@ -743,10 +743,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc9-Pt-rBY" userLabel="Usable Limit Label">
+                                <rect key="frame" x="30" y="462" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LyA-Sn-ILL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Hc9-Pt-rBY" firstAttribute="leading" secondItem="LyA-Sn-ILL" secondAttribute="leading" constant="30" id="62q-ln-8Gb"/>
                             <constraint firstItem="VWe-hS-OkA" firstAttribute="centerX" secondItem="LyA-Sn-ILL" secondAttribute="centerX" id="Bdn-tL-6uX"/>
                             <constraint firstItem="LyA-Sn-ILL" firstAttribute="trailing" secondItem="cPo-5u-wiB" secondAttribute="trailing" constant="87" id="KXc-3V-F7Q"/>
                             <constraint firstItem="pb1-NQ-2KZ" firstAttribute="leading" secondItem="LyA-Sn-ILL" secondAttribute="leading" constant="30" id="KkS-Xp-rWK"/>
@@ -756,8 +763,10 @@
                             <constraint firstItem="VWe-hS-OkA" firstAttribute="top" secondItem="pb1-NQ-2KZ" secondAttribute="bottom" constant="50" id="hte-Rc-1zJ"/>
                             <constraint firstItem="cPo-5u-wiB" firstAttribute="leading" secondItem="LyA-Sn-ILL" secondAttribute="leading" constant="87" id="mAU-fX-AD8"/>
                             <constraint firstItem="pb1-NQ-2KZ" firstAttribute="top" secondItem="cPo-5u-wiB" secondAttribute="bottom" constant="60" id="nim-NL-RpB"/>
+                            <constraint firstItem="Hc9-Pt-rBY" firstAttribute="top" secondItem="VWe-hS-OkA" secondAttribute="bottom" constant="50" id="rsG-UM-Yk4"/>
                             <constraint firstItem="pb1-NQ-2KZ" firstAttribute="centerX" secondItem="LyA-Sn-ILL" secondAttribute="centerX" id="uEH-rs-ATT"/>
                             <constraint firstItem="VWe-hS-OkA" firstAttribute="leading" secondItem="LyA-Sn-ILL" secondAttribute="leading" constant="30" id="vLC-a1-d2V"/>
+                            <constraint firstItem="LyA-Sn-ILL" firstAttribute="trailing" secondItem="Hc9-Pt-rBY" secondAttribute="trailing" constant="30" id="zff-MO-Vso"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g7T-nG-6YJ"/>
@@ -766,6 +775,7 @@
                         <outlet property="cardTypeImageView" destination="MRO-Ur-7T3" id="WBd-8R-yfF"/>
                         <outlet property="currentDebtLabel" destination="VWe-hS-OkA" id="r3i-sx-a02"/>
                         <outlet property="duePaymentLabel" destination="pb1-NQ-2KZ" id="d7H-6L-02E"/>
+                        <outlet property="usableLimitLabel" destination="Hc9-Pt-rBY" id="Jsk-j4-Ucr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2r-VV-9qg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
