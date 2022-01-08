@@ -20,7 +20,7 @@ class CardsCollectionViewCell: UICollectionViewCell {
     
     func configure(with model: CardModel?) {
         cardTypeImageView.image = model?.cardType == .masterCard ? UIImage(named: "masterCard") : UIImage(named: "visaCard")
-        usableLimitLabel.text = "Usable Limit: \(model?.usableLimit ?? 0 ) TL"
+        usableLimitLabel.text = "Usable Limit: \(model?.usableLimit?.round(to: 2) ?? 0 ) TL"
         cardNumberLabel.text = model?.cardNumber
     }
 }

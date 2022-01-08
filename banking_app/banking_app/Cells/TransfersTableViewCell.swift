@@ -31,7 +31,7 @@ class TransfersTableViewCell: UITableViewCell {
     }
     
     func configure(with model: TransactionModel?) {
-        transferAmountLabel.text = "\(model?.amount ?? 0)"
+        transferAmountLabel.text = "\(model?.amount?.round(to: 2) ?? 0)"
         transferIdLabel.text = model?.transferId
         
         if model?.senderTCKN == AppSingleton.shared.userModel?.tckn {

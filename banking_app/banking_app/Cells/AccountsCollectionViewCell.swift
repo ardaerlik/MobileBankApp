@@ -31,7 +31,7 @@ class AccountsCollectionViewCell: UICollectionViewCell {
         case .none:
             accountTypeImageView.image = UIImage(named: "TRY")
         }
-        usableAmountLabel.text = "Usable Amount: \(model?.usableAmount ?? 0) \(model?.accountType?.rawValue ?? "TRY")"
+        usableAmountLabel.text = "Usable Amount: \(model?.usableAmount?.round(to: 2) ?? 0) \(model?.accountType?.rawValue ?? "TRY")"
         accountNumberLabel.text = model?.accountNumber!.separate(every: 4, with: " ")
     }
 }

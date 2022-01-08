@@ -27,6 +27,6 @@ class CardDetailViewController: UIViewController {
         cardTypeImageView.image = model.cardType == .masterCard ? UIImage(named: "masterCard") : UIImage(named: "visaCard")
         cardNumberLabel.text = model.cardNumber
         duePaymentLabel.text = "Due of Payment: \(model.duePayment!)"
-        currentDebtLabel.text = "Current Debt: \(model.currentDebt!) TL"
+        currentDebtLabel.text = "Current Debt: \(model.currentDebt!.round(to: 2)) TL"
     }
 }

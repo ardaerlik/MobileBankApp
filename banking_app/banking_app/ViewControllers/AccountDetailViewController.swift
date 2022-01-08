@@ -22,20 +22,8 @@ class AccountDetailViewController: UIViewController {
     
     private func setUI(with model: AccountModel) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        switch model.accountType {
-        case .EUR:
-            accountTypeImageView.image = UIImage(named: "EUR")
-        case .TRY:
-            accountTypeImageView.image = UIImage(named: "TRY")
-        case .USD:
-            accountTypeImageView.image = UIImage(named: "USD")
-        case .XAU:
-            accountTypeImageView.image = UIImage(named: "XAU")
-        case .none:
-            accountTypeImageView.image = UIImage(named: "TRY")
-        }
+        accountTypeImageView.image = UIImage(named: model.accountType!.rawValue)
         accountNumberLabel.text = model.accountNumber!.separate(every: 4, with: " ")
-        usableAmountLabel.text = "Usable Amount: \(model.usableAmount!)"
+        usableAmountLabel.text = "Usable Amount: \(model.usableAmount!.round(to: 2)) \(model.accountType!.rawValue)"
     }
 }
