@@ -15,4 +15,8 @@ struct UserModel {
     var tckn: String
     var gsm: String
     var address: String
+    var avatar: String
+    var email: String
+    var occupation: String
+    var company: String
 }

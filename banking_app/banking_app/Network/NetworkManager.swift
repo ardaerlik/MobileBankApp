@@ -28,6 +28,10 @@ class NetworkManager {
                let username = data["NameSurname"] as? String,
                let address = data["Address"] as? String,
                let gsm = data["GSM"] as? String,
+               let avatar = data["avatar"] as? String,
+               let email = data["email"] as? String,
+               let occupation = data["occupation"] as? String,
+               let company = data["company"] as? String,
                let cards = data["cards"] as? [[String: Any]],
                let accounts = data["accounts"] as? [[String: Any]],
                let worth = data["worth"] as? [String: Any],
@@ -37,7 +41,7 @@ class NetworkManager {
                 cards.forEach { userCards.append(CardModel(with: $0)) } 
                 accounts.forEach { userAccounts.append(AccountModel(with: $0)) }
                 let worthModel = WorthModel(with: worth)
-                completion(isPasswordCorrect ? .success(UserModel(accounts: userAccounts, cards: userCards, worth: worthModel, username: username, tckn: tckn, gsm: gsm, address: address)) : .failure(AppError.invalidPassword))
+                completion(isPasswordCorrect ? .success(UserModel(accounts: userAccounts, cards: userCards, worth: worthModel, username: username, tckn: tckn, gsm: gsm, address: address, avatar: avatar, email: email, occupation: occupation, company: company)) : .failure(AppError.invalidPassword))
             } else {
                 completion(.failure(AppError.invalidCredentials))
             }

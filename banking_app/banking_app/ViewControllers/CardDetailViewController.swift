@@ -13,6 +13,7 @@ class CardDetailViewController: UIViewController {
     @IBOutlet private weak var cardNumberLabel: UILabel!
     @IBOutlet private weak var duePaymentLabel: UILabel!
     @IBOutlet private weak var currentDebtLabel: UILabel!
+    @IBOutlet private weak var usableLimitLabel: UILabel!
     
     var cardModel: CardModel?
     
@@ -22,9 +23,12 @@ class CardDetailViewController: UIViewController {
     }
     
     private func setUI(with model: CardModel) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         cardTypeImageView.image = model.cardType == .masterCard ? UIImage(named: "masterCard") : UIImage(named: "visaCard")
         cardNumberLabel.text = model.cardNumber
-        duePaymentLabel.text = "Due of Payment: \(model.duePayment!)"
-        currentDebtLabel.text = "Current Debt: \(model.currentDebt!) TL"
+        duePaymentLabel.text = "\(model.duePayment!)"
+        currentDebtLabel.text = "\(model.currentDebt!.round(to: 2)) TRY"
+        usableLimitLabel.text = "\(model.usableLimit!.round(to: 2)) TRY"
     }
 }

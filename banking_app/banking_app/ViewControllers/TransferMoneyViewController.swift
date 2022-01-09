@@ -13,8 +13,9 @@ class TransferMoneyViewController: UIViewController {
     @IBOutlet private weak var receiverAccountIbanTextField: UITextField!
     @IBOutlet private weak var receiverTcknTextField: UITextField!
     @IBOutlet private weak var transferAmountTextField: UITextField!
-    @IBOutlet private weak var amountErrorLabel: UILabel!
     @IBOutlet private weak var transferErrorLabel: UILabel!
+    @IBOutlet private weak var transferButton: UIButton!
+    @IBOutlet private weak var senderAccountHeaderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +24,38 @@ class TransferMoneyViewController: UIViewController {
         transferAmountTextField.delegate = self
         senderAccountPickerView.delegate = self
         senderAccountPickerView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        amountErrorLabel.isHidden = true
+        setUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        receiverAccountIbanTextField.text = ""
+        receiverTcknTextField.text = ""
+        transferAmountTextField.text = ""
+    }
+    
+    private func setUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         transferErrorLabel.isHidden = true
-        amountErrorLabel.textColor = .black
         transferErrorLabel.textColor = .black
+        setupToolbarForTextField()
+        initializeHideKeyboard()
     }
 
-    @IBAction func makeTransferButtonTouched(_ sender: UIButton) {
+    @IBAction func makeTransferButtonTouched(_ sender: Any) {
+        if receiverTcknTextField.text!.isEmpty || receiverAccountIbanTextField.text!.isEmpty || transferAmountTextField.text!.isEmpty {
+            self.transferErrorLabel.textColor = .red
+            self.transferErrorLabel.text = AppError.emptyInput.rawValue
+            self.transferErrorLabel.isHidden = false
+            return
+        }
+        
         let senderAccountIban: String = (AppSingleton.shared.userModel?.accounts[senderAccountPickerView.selectedRow(inComponent: 0)].accountNumber)!
         let receiverAccountIban: String = receiverAccountIbanTextField.text!
         let receiverTckn: String = receiverTcknTextField.text!
@@ -56,17 +78,81 @@ class TransferMoneyViewController: UIViewController {
             }
         }
     }
+    
+    private func setupToolbarForTextField() {
+        let barForIban = UIToolbar()
+        let barForTckn = UIToolbar()
+        let barForAmount = UIToolbar()
+        let nextButtonToTckn = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toTckn))
+        let nextButtonToAmount = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toAmount))
+        let previousButtonToTckn = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toTckn))
+        let previousButtonToIban = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toIban))
+        let doneButton = UIBarButtonItem(title: "Make Transfer", style: .plain, target: self, action: #selector(dismissKeyboardAndMakeTransfer))
+        nextButtonToTckn.image = UIImage(systemName: "chevron.down")
+        nextButtonToAmount.image = UIImage(systemName: "chevron.down")
+        previousButtonToTckn.image = UIImage(systemName: "chevron.up")
+        previousButtonToIban.image = UIImage(systemName: "chevron.up")
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        barForIban.items = [nextButtonToTckn, flexSpace, flexSpace]
+        barForTckn.items = [nextButtonToAmount, previousButtonToIban, flexSpace]
+        barForAmount.items = [previousButtonToTckn, flexSpace, doneButton]
+        barForIban.sizeToFit()
+        barForTckn.sizeToFit()
+        barForAmount.sizeToFit()
+        
+        receiverAccountIbanTextField.inputAccessoryView = barForIban
+        receiverTcknTextField.inputAccessoryView = barForTckn
+        transferAmountTextField.inputAccessoryView = barForAmount
+    }
+    
+    private func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    @objc private func dismissKeyboardAndMakeTransfer() {
+        self.view.endEditing(true)
+        makeTransferButtonTouched(self)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                senderAccountHeaderView.isHidden = true
+                senderAccountPickerView.isHidden = true
+                self.view.frame.origin.y -= (transferButton.frame.maxY - (self.view.frame.height - keyboardSize.height) + 10)
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            senderAccountHeaderView.isHidden = false
+            senderAccountPickerView.isHidden = false
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    @objc private func toIban() {
+        receiverAccountIbanTextField.becomeFirstResponder()
+    }
+    
+    @objc private func toTckn() {
+        receiverTcknTextField.becomeFirstResponder()
+    }
+    
+    @objc private func toAmount() {
+        transferAmountTextField.becomeFirstResponder()
+    }
 }
 
 extension TransferMoneyViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // TODO: text field
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // TODO: text field
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false

@@ -19,13 +19,18 @@ class InvestmentsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUI()
         showLoadingView()
         getInvestments()
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    private func setUI() {
+        self.title = "Investments"
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

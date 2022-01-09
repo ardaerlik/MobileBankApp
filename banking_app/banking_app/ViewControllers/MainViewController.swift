@@ -17,6 +17,15 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUI()
+    }
+    
+    private func setUI() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     @IBAction func settingsButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "showSettings", sender: nil)
