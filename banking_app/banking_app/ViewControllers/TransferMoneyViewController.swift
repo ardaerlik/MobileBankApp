@@ -95,9 +95,9 @@ class TransferMoneyViewController: UIViewController {
         barForTckn.sizeToFit()
         barForAmount.sizeToFit()
         
-        receiverAccountIbanTextField.inputAccessoryView = barForIban
-        receiverTcknTextField.inputAccessoryView = barForTckn
-        transferAmountTextField.inputAccessoryView = barForAmount
+        //receiverAccountIbanTextField.inputAccessoryView = barForIban
+        //receiverTcknTextField.inputAccessoryView = barForTckn
+        //transferAmountTextField.inputAccessoryView = barForAmount
     }
     
     private func initializeHideKeyboard() {
