@@ -14,6 +14,8 @@ class TransferMoneyViewController: UIViewController {
     @IBOutlet private weak var receiverTcknTextField: UITextField!
     @IBOutlet private weak var transferAmountTextField: UITextField!
     @IBOutlet private weak var transferErrorLabel: UILabel!
+    @IBOutlet private weak var transferButton: UIButton!
+    @IBOutlet private weak var senderAccountHeaderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,13 +124,17 @@ class TransferMoneyViewController: UIViewController {
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= (transferAmountTextField.frame.maxY - (self.view.frame.height - keyboardSize.height) + 10)
+                senderAccountHeaderView.isHidden = true
+                senderAccountPickerView.isHidden = true
+                self.view.frame.origin.y -= (transferButton.frame.maxY - (self.view.frame.height - keyboardSize.height) + 10)
             }
         }
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
+            senderAccountHeaderView.isHidden = false
+            senderAccountPickerView.isHidden = false
             self.view.frame.origin.y = 0
         }
     }

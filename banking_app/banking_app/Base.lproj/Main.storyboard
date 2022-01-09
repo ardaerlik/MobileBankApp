@@ -270,8 +270,10 @@
                     <connections>
                         <outlet property="receiverAccountIbanTextField" destination="Wgt-4i-HuG" id="Vg6-lU-MeZ"/>
                         <outlet property="receiverTcknTextField" destination="Gwz-Lo-sce" id="HJO-zn-M3n"/>
+                        <outlet property="senderAccountHeaderView" destination="15h-I0-Cyf" id="83P-xV-Ppk"/>
                         <outlet property="senderAccountPickerView" destination="LbO-tY-7Aa" id="pM7-eS-6AW"/>
                         <outlet property="transferAmountTextField" destination="tog-VT-i1V" id="nLJ-Qg-jsW"/>
+                        <outlet property="transferButton" destination="Ghf-dB-7Xe" id="5aX-Af-vwL"/>
                         <outlet property="transferErrorLabel" destination="jiN-Hv-gek" id="6yA-UW-gnF"/>
                     </connections>
                 </viewController>
