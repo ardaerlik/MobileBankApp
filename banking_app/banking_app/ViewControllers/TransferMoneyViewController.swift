@@ -81,23 +81,28 @@ class TransferMoneyViewController: UIViewController {
         let barForIban = UIToolbar()
         let barForTckn = UIToolbar()
         let barForAmount = UIToolbar()
-        let nextButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(nextTextField))
-        let previousButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(previousTextField))
+        let nextButtonToTckn = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toTckn))
+        let nextButtonToAmount = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toAmount))
+        let previousButtonToTckn = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toTckn))
+        let previousButtonToIban = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toIban))
         let doneButton = UIBarButtonItem(title: "Make Transfer", style: .plain, target: self, action: #selector(dismissKeyboardAndMakeTransfer))
-        nextButton.image = UIImage(systemName: "chevron.down")
-        previousButton.image = UIImage(systemName: "chevron.up")
+        nextButtonToTckn.image = UIImage(systemName: "chevron.down")
+        nextButtonToAmount.image = UIImage(systemName: "chevron.down")
+        previousButtonToTckn.image = UIImage(systemName: "chevron.up")
+        previousButtonToIban.image = UIImage(systemName: "chevron.up")
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        barForIban.items = [nextButton, flexSpace, flexSpace]
-        barForTckn.items = [nextButton, previousButton, flexSpace]
-        barForAmount.items = [previousButton, flexSpace, doneButton]
+        
+        barForIban.items = [nextButtonToTckn, flexSpace, flexSpace]
+        barForTckn.items = [nextButtonToAmount, previousButtonToIban, flexSpace]
+        barForAmount.items = [previousButtonToTckn, flexSpace, doneButton]
         barForIban.sizeToFit()
         barForTckn.sizeToFit()
         barForAmount.sizeToFit()
         
-        //receiverAccountIbanTextField.inputAccessoryView = barForIban
-        //receiverTcknTextField.inputAccessoryView = barForTckn
-        //transferAmountTextField.inputAccessoryView = barForAmount
+        receiverAccountIbanTextField.inputAccessoryView = barForIban
+        receiverTcknTextField.inputAccessoryView = barForTckn
+        transferAmountTextField.inputAccessoryView = barForAmount
     }
     
     private func initializeHideKeyboard() {
@@ -115,7 +120,11 @@ class TransferMoneyViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-        
+        if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (transferAmountTextField.frame.maxY - (self.view.frame.height - keyboardSize.height) + 10)
+            }
+        }
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
@@ -124,12 +133,16 @@ class TransferMoneyViewController: UIViewController {
         }
     }
     
-    @objc private func previousTextField() {
-        
+    @objc private func toIban() {
+        receiverAccountIbanTextField.becomeFirstResponder()
     }
     
-    @objc private func nextTextField() {
-        
+    @objc private func toTckn() {
+        receiverTcknTextField.becomeFirstResponder()
+    }
+    
+    @objc private func toAmount() {
+        transferAmountTextField.becomeFirstResponder()
     }
 }
 
