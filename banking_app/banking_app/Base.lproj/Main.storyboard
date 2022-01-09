@@ -299,19 +299,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-Fi-7c2" userLabel="Stack View 1">
-                                                    <rect key="frame" x="10" y="10" width="354" height="49"/>
+                                                    <rect key="frame" x="20" y="10" width="334" height="49"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJB-Jt-BeJ" userLabel="User TCKN Label">
-                                                            <rect key="frame" x="0.0" y="0.0" width="51" height="49"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="49"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SagaOk" translatesAutoresizingMaskIntoConstraints="NO" id="5O2-Nx-4E2" userLabel="Transfer Way Image View">
-                                                            <rect key="frame" x="122" y="0.0" width="110" height="49"/>
+                                                            <rect key="frame" x="112.5" y="0.0" width="109" height="49"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBb-kh-lVZ" userLabel="Other TCKN Label">
-                                                            <rect key="frame" x="303" y="0.0" width="51" height="49"/>
+                                                            <rect key="frame" x="292.5" y="0.0" width="41.5" height="49"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -324,16 +324,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="251" translatesAutoresizingMaskIntoConstraints="NO" id="yyD-44-LUy" userLabel="Stack View 2">
-                                                    <rect key="frame" x="10" y="79" width="354" height="20.5"/>
+                                                    <rect key="frame" x="20" y="79" width="334" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-jv-MH4" userLabel="Transfer Amount Label">
-                                                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-jv-MH4" userLabel="Transfer Amount Label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" systemColor="systemOrangeColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWT-xv-rQW" userLabel="Transfer ID Label">
-                                                            <rect key="frame" x="312.5" y="0.0" width="41.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWT-xv-rQW" userLabel="Transfer ID Label">
+                                                            <rect key="frame" x="292.5" y="0.0" width="41.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                             <nil key="highlightedColor"/>
@@ -343,19 +343,30 @@
                                                         <constraint firstItem="WWT-xv-rQW" firstAttribute="leading" secondItem="rGa-jv-MH4" secondAttribute="trailing" id="LxT-vO-XS2"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvM-Gn-hlG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="123"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="5qh-cQ-COM"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="yyD-44-LUy" firstAttribute="centerX" secondItem="fQI-2F-zTG" secondAttribute="centerX" id="2Ac-0G-vBm"/>
                                                 <constraint firstItem="gdk-Fi-7c2" firstAttribute="centerX" secondItem="fQI-2F-zTG" secondAttribute="centerX" id="2EA-Y4-tiv"/>
-                                                <constraint firstAttribute="trailing" secondItem="yyD-44-LUy" secondAttribute="trailing" constant="10" id="Cxe-tH-rhk"/>
+                                                <constraint firstAttribute="trailing" secondItem="yyD-44-LUy" secondAttribute="trailing" constant="20" id="Cxe-tH-rhk"/>
                                                 <constraint firstItem="gdk-Fi-7c2" firstAttribute="top" secondItem="fQI-2F-zTG" secondAttribute="top" constant="10" id="EtJ-ec-gaS"/>
-                                                <constraint firstItem="yyD-44-LUy" firstAttribute="leading" secondItem="fQI-2F-zTG" secondAttribute="leading" constant="10" id="NMf-Si-eX4"/>
+                                                <constraint firstItem="yyD-44-LUy" firstAttribute="leading" secondItem="fQI-2F-zTG" secondAttribute="leading" constant="20" id="NMf-Si-eX4"/>
                                                 <constraint firstItem="yyD-44-LUy" firstAttribute="top" secondItem="gdk-Fi-7c2" secondAttribute="bottom" constant="20" id="d7a-9u-aio"/>
-                                                <constraint firstAttribute="trailing" secondItem="gdk-Fi-7c2" secondAttribute="trailing" constant="10" id="t50-hP-FMR"/>
-                                                <constraint firstItem="gdk-Fi-7c2" firstAttribute="leading" secondItem="fQI-2F-zTG" secondAttribute="leading" constant="10" id="yDr-Gm-J6b"/>
+                                                <constraint firstAttribute="trailing" secondItem="gdk-Fi-7c2" secondAttribute="trailing" constant="20" id="t50-hP-FMR"/>
+                                                <constraint firstItem="gdk-Fi-7c2" firstAttribute="leading" secondItem="fQI-2F-zTG" secondAttribute="leading" constant="20" id="yDr-Gm-J6b"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="dvM-Gn-hlG" firstAttribute="leading" secondItem="DeF-nc-SL7" secondAttribute="leading" id="0lM-cH-xMx"/>
+                                            <constraint firstItem="dvM-Gn-hlG" firstAttribute="height" secondItem="DeF-nc-SL7" secondAttribute="height" id="Ngx-lt-E85"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="otherTcknLabel" destination="eBb-kh-lVZ" id="S4f-sl-iEm"/>
                                             <outlet property="transferAmountLabel" destination="rGa-jv-MH4" id="mH4-8A-tC8"/>
@@ -405,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZE-va-T4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3641" y="1359"/>
+            <point key="canvasLocation" x="3640.579710144928" y="1358.7053571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LC7-GS-5pp">
