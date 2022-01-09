@@ -1354,20 +1354,30 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRs-Zm-Ell" userLabel="Investment Type Label">
                                                     <rect key="frame" x="20" y="20" width="266" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow.forward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="caN-uH-l1v" userLabel="Icon Image View">
                                                     <rect key="frame" x="294" y="5.5" width="69" height="48"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeS-2i-Lzk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="60"/>
+                                                    <color key="backgroundColor" systemColor="tintColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="Z3B-IY-jw7"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="leading" secondItem="2Fc-3Q-YZD" secondAttribute="leading" constant="10" id="EBS-4W-uZj"/>
+                                                <constraint firstItem="iRs-Zm-Ell" firstAttribute="leading" secondItem="2Fc-3Q-YZD" secondAttribute="leading" constant="20" id="EBS-4W-uZj"/>
                                                 <constraint firstAttribute="trailing" secondItem="caN-uH-l1v" secondAttribute="trailing" constant="10" id="HBY-uY-dIt"/>
                                                 <constraint firstItem="iRs-Zm-Ell" firstAttribute="centerY" secondItem="2Fc-3Q-YZD" secondAttribute="centerY" id="UNd-v0-Sz9"/>
+                                                <constraint firstItem="GeS-2i-Lzk" firstAttribute="leading" secondItem="2Fc-3Q-YZD" secondAttribute="leading" id="dqg-Xf-W5T"/>
                                                 <constraint firstItem="iRs-Zm-Ell" firstAttribute="centerY" secondItem="caN-uH-l1v" secondAttribute="centerY" id="gsq-jV-Snq"/>
+                                                <constraint firstItem="GeS-2i-Lzk" firstAttribute="height" secondItem="2Fc-3Q-YZD" secondAttribute="height" id="k8i-Rh-9VX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1401,7 +1411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzO-3n-hV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3641" y="2058"/>
+            <point key="canvasLocation" x="3640.579710144928" y="2057.8125"/>
         </scene>
         <!--Investments Detail View Controller-->
         <scene sceneID="y9w-K1-XjY">
@@ -1423,20 +1433,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-ck-S4d">
-                                                    <rect key="frame" x="10" y="10" width="354" height="65"/>
+                                                    <rect key="frame" x="20" y="10" width="344" height="65"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-Hn-dG6" userLabel="Investment Name Label">
-                                                            <rect key="frame" x="0.0" y="0.0" width="152.5" height="65"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="142.5" height="65"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="YukariOk" translatesAutoresizingMaskIntoConstraints="NO" id="b9c-xB-Ehs" userLabel="Investment Change Image View">
-                                                            <rect key="frame" x="152.5" y="0.0" width="49" height="65"/>
+                                                            <rect key="frame" x="142.5" y="0.0" width="49" height="65"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7h-lQ-F1V" userLabel="Investment Price Label">
-                                                            <rect key="frame" x="201.5" y="0.0" width="152.5" height="65"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <rect key="frame" x="191.5" y="0.0" width="152.5" height="65"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1446,19 +1456,30 @@
                                                         <constraint firstItem="z7h-lQ-F1V" firstAttribute="leading" secondItem="b9c-xB-Ehs" secondAttribute="trailing" id="cmI-qt-lJ3"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iZ6-t0-L3y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="85"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="sjc-5f-RfK"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="kdr-ck-S4d" secondAttribute="bottom" constant="10" id="1Gk-QR-o9t"/>
                                                 <constraint firstItem="kdr-ck-S4d" firstAttribute="centerY" secondItem="1Q8-N7-gyd" secondAttribute="centerY" id="5C6-gy-k7S"/>
                                                 <constraint firstItem="b9c-xB-Ehs" firstAttribute="centerX" secondItem="1Q8-N7-gyd" secondAttribute="centerX" id="Amu-jc-1B3"/>
-                                                <constraint firstItem="kdr-ck-S4d" firstAttribute="leading" secondItem="1Q8-N7-gyd" secondAttribute="leading" constant="10" id="EQn-Q0-Db3"/>
+                                                <constraint firstItem="kdr-ck-S4d" firstAttribute="leading" secondItem="1Q8-N7-gyd" secondAttribute="leading" constant="20" id="EQn-Q0-Db3"/>
                                                 <constraint firstAttribute="trailing" secondItem="kdr-ck-S4d" secondAttribute="trailing" constant="10" id="SlK-Rk-qC0"/>
                                                 <constraint firstItem="kdr-ck-S4d" firstAttribute="centerX" secondItem="1Q8-N7-gyd" secondAttribute="centerX" id="VIV-Ca-guG"/>
                                                 <constraint firstItem="kdr-ck-S4d" firstAttribute="top" secondItem="1Q8-N7-gyd" secondAttribute="top" constant="10" id="fer-6k-QBk"/>
                                                 <constraint firstItem="b9c-xB-Ehs" firstAttribute="centerY" secondItem="1Q8-N7-gyd" secondAttribute="centerY" id="s3e-Qb-pqf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="iZ6-t0-L3y" firstAttribute="leading" secondItem="BEA-rX-xqn" secondAttribute="leading" id="BER-WW-Smy"/>
+                                            <constraint firstItem="iZ6-t0-L3y" firstAttribute="height" secondItem="BEA-rX-xqn" secondAttribute="height" id="XFS-Xk-Rl8"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="investmentChangeImageView" destination="b9c-xB-Ehs" id="Dur-Zu-yTV"/>
                                             <outlet property="investmentNameLabel" destination="vNv-Hn-dG6" id="wWB-gz-x4I"/>
@@ -1701,6 +1722,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
