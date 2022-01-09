@@ -29,6 +29,7 @@ class TransfersViewController: BaseViewController {
     }
     
     private func setUI() {
+        self.title = "Transfers"
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     

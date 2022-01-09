@@ -29,6 +29,7 @@ class InvestmentsViewController: BaseViewController {
     }
     
     private func setUI() {
+        self.title = "Investments"
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     

@@ -288,7 +288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="123" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-9R-b22" userLabel="Transfers Table View">
-                                <rect key="frame" x="20" y="98" width="374" height="627"/>
+                                <rect key="frame" x="20" y="108" width="374" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TransfersTableViewCell" rowHeight="123" id="DeF-nc-SL7" customClass="TransfersTableViewCell" customModule="banking_app" customModuleProvider="target">
@@ -388,11 +388,11 @@
                         <viewLayoutGuide key="safeArea" id="Cgj-lC-djM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gjX-9R-b22" firstAttribute="height" secondItem="nve-XH-ssa" secondAttribute="height" multiplier="0.7" id="CmS-F4-LTD"/>
+                            <constraint firstItem="gjX-9R-b22" firstAttribute="height" secondItem="nve-XH-ssa" secondAttribute="height" multiplier="0.77" id="CmS-F4-LTD"/>
                             <constraint firstItem="Cgj-lC-djM" firstAttribute="trailing" secondItem="gjX-9R-b22" secondAttribute="trailing" constant="20" id="Esb-xY-Qcu"/>
                             <constraint firstItem="gjX-9R-b22" firstAttribute="leading" secondItem="Cgj-lC-djM" secondAttribute="leading" constant="20" id="K9A-VQ-ycL"/>
                             <constraint firstItem="HXS-wC-XXF" firstAttribute="leading" secondItem="Cgj-lC-djM" secondAttribute="leading" constant="20" id="NV9-Ch-Cff"/>
-                            <constraint firstItem="gjX-9R-b22" firstAttribute="top" secondItem="Cgj-lC-djM" secondAttribute="top" constant="10" id="POF-83-kph"/>
+                            <constraint firstItem="gjX-9R-b22" firstAttribute="top" secondItem="Cgj-lC-djM" secondAttribute="top" constant="20" id="POF-83-kph"/>
                             <constraint firstItem="HXS-wC-XXF" firstAttribute="top" secondItem="gjX-9R-b22" secondAttribute="bottom" constant="15" id="bg1-cX-nJ9"/>
                             <constraint firstItem="Cgj-lC-djM" firstAttribute="trailing" secondItem="HXS-wC-XXF" secondAttribute="trailing" constant="20" id="cl5-GO-hGt"/>
                         </constraints>
