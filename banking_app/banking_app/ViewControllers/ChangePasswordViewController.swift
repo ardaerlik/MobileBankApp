@@ -34,6 +34,7 @@ class ChangePasswordViewController: UIViewController {
     }
     
     private func setUI() {
+        self.title = "Change Password"
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         errorLabel.isHidden = true
         errorLabel.textColor = .black
@@ -103,7 +104,7 @@ class ChangePasswordViewController: UIViewController {
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= (changePasswordButton.frame.minY - (self.view.frame.height - keyboardSize.height))
+                self.view.frame.origin.y -= (changePasswordButton.frame.maxY - (self.view.frame.height - keyboardSize.height) + 20)
             }
         }
     }
