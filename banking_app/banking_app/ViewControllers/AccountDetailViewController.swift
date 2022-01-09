@@ -24,6 +24,6 @@ class AccountDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         accountTypeImageView.image = UIImage(named: model.accountType!.rawValue)
         accountNumberLabel.text = model.accountNumber!.separate(every: 4, with: " ")
-        usableAmountLabel.text = "Usable Amount: \(model.usableAmount!.round(to: 2)) \(model.accountType!.rawValue)"
+        usableAmountLabel.text = "\(model.usableAmount!.round(to: 2)) \(model.accountType!.rawValue)"
     }
 }

@@ -708,23 +708,50 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-fm-7ym" userLabel="Usable Amount Label">
-                                <rect key="frame" x="30" y="320" width="354" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66G-mI-SR8" userLabel="Usable Amount View">
+                                <rect key="frame" x="20" y="300" width="374" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-fm-7ym" userLabel="Usable Amount Label">
+                                        <rect key="frame" x="216" y="15" width="150" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usable Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW0-jK-Hn0">
+                                        <rect key="frame" x="10" y="10.5" width="165" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="TzS-v6-b8M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TBi-fm-7ym" secondAttribute="trailing" constant="10" id="MbT-pz-ut4"/>
+                                    <constraint firstItem="TBi-fm-7ym" firstAttribute="centerY" secondItem="66G-mI-SR8" secondAttribute="centerY" id="bNB-ND-Son"/>
+                                    <constraint firstItem="TBi-fm-7ym" firstAttribute="leading" secondItem="PW0-jK-Hn0" secondAttribute="trailing" id="eUT-Iw-Mdx"/>
+                                    <constraint firstAttribute="height" constant="50" id="ecP-6m-e5F"/>
+                                    <constraint firstItem="PW0-jK-Hn0" firstAttribute="leading" secondItem="66G-mI-SR8" secondAttribute="leading" constant="10" id="ra3-c1-f7v"/>
+                                    <constraint firstItem="PW0-jK-Hn0" firstAttribute="centerY" secondItem="66G-mI-SR8" secondAttribute="centerY" id="voo-yy-Lk3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mBH-EN-ghD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mBH-EN-ghD" firstAttribute="trailing" secondItem="CMY-b2-GdJ" secondAttribute="trailing" constant="87" id="5UY-S5-qnM"/>
-                            <constraint firstItem="TBi-fm-7ym" firstAttribute="leading" secondItem="mBH-EN-ghD" secondAttribute="leading" constant="30" id="Axc-b2-8JV"/>
-                            <constraint firstItem="TBi-fm-7ym" firstAttribute="top" secondItem="CMY-b2-GdJ" secondAttribute="bottom" constant="60" id="BX8-7f-jwO"/>
-                            <constraint firstItem="mBH-EN-ghD" firstAttribute="trailing" secondItem="TBi-fm-7ym" secondAttribute="trailing" constant="30" id="CQT-Et-cyV"/>
+                            <constraint firstItem="66G-mI-SR8" firstAttribute="leading" secondItem="mBH-EN-ghD" secondAttribute="leading" constant="20" id="7Ns-Jc-BKl"/>
+                            <constraint firstItem="mBH-EN-ghD" firstAttribute="trailing" secondItem="66G-mI-SR8" secondAttribute="trailing" constant="20" id="E5Q-4V-96r"/>
                             <constraint firstItem="CMY-b2-GdJ" firstAttribute="leading" secondItem="mBH-EN-ghD" secondAttribute="leading" constant="87" id="IjD-sy-eJZ"/>
                             <constraint firstItem="CMY-b2-GdJ" firstAttribute="top" secondItem="mBH-EN-ghD" secondAttribute="top" constant="44" id="RXO-d6-PTM"/>
-                            <constraint firstItem="TBi-fm-7ym" firstAttribute="centerX" secondItem="mBH-EN-ghD" secondAttribute="centerX" id="tHa-FG-WWA"/>
+                            <constraint firstItem="66G-mI-SR8" firstAttribute="top" secondItem="CMY-b2-GdJ" secondAttribute="bottom" constant="40" id="ohr-eR-Gcs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4rr-mO-eEi"/>
@@ -736,7 +763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDK-A5-CLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2748" y="2058"/>
+            <point key="canvasLocation" x="2747.826086956522" y="2057.8125"/>
         </scene>
         <!--Card Detail View Controller-->
         <scene sceneID="gh6-mn-aEj">
