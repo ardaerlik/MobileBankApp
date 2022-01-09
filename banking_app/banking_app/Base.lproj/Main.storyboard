@@ -1233,7 +1233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OHH-Qf-6L3">
-                                <rect key="frame" x="20" y="118" width="374" height="695"/>
+                                <rect key="frame" x="20" y="108" width="374" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvestmentTypeTableCell" rowHeight="60" id="CV2-Eo-ci1" customClass="InvestmentsTableViewCell" customModule="banking_app" customModuleProvider="target">
@@ -1281,7 +1281,7 @@
                             <constraint firstItem="uRo-W6-0ib" firstAttribute="trailing" secondItem="OHH-Qf-6L3" secondAttribute="trailing" constant="20" id="Seu-jx-Jzs"/>
                             <constraint firstItem="OHH-Qf-6L3" firstAttribute="centerX" secondItem="uRo-W6-0ib" secondAttribute="centerX" id="aHG-LK-TB3"/>
                             <constraint firstItem="OHH-Qf-6L3" firstAttribute="centerY" secondItem="uRo-W6-0ib" secondAttribute="centerY" id="nip-0t-jXB"/>
-                            <constraint firstItem="OHH-Qf-6L3" firstAttribute="top" secondItem="uRo-W6-0ib" secondAttribute="top" constant="30" id="rSA-aO-dUs"/>
+                            <constraint firstItem="OHH-Qf-6L3" firstAttribute="top" secondItem="uRo-W6-0ib" secondAttribute="top" constant="20" id="rSA-aO-dUs"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Investments" image="investments" id="fWj-Ig-RBd"/>
