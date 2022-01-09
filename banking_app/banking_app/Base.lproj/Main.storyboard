@@ -144,11 +144,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yj1-ck-iia">
+                                        <rect key="frame" x="0.0" y="0.0" width="12" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="Afl-J1-lmw"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="11C-HQ-DAC"/>
+                                    <constraint firstItem="Yj1-ck-iia" firstAttribute="height" secondItem="a1F-WP-fkP" secondAttribute="height" id="88u-AH-qQi"/>
                                     <constraint firstItem="5rj-KL-H11" firstAttribute="leading" secondItem="a1F-WP-fkP" secondAttribute="leading" constant="20" id="9YP-bb-mj2"/>
+                                    <constraint firstItem="Yj1-ck-iia" firstAttribute="leading" secondItem="a1F-WP-fkP" secondAttribute="leading" id="LSw-fs-k9G"/>
                                     <constraint firstItem="5rj-KL-H11" firstAttribute="centerY" secondItem="a1F-WP-fkP" secondAttribute="centerY" id="asO-CW-O7O"/>
                                 </constraints>
                             </view>
@@ -167,11 +176,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5D-hO-nrh">
+                                        <rect key="frame" x="0.0" y="0.0" width="12" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="UYb-KB-OOX"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="O5D-hO-nrh" firstAttribute="leading" secondItem="15h-I0-Cyf" secondAttribute="leading" id="2Ud-37-FG1"/>
                                     <constraint firstAttribute="height" constant="30" id="6zH-jX-nL0"/>
                                     <constraint firstItem="opn-WE-viW" firstAttribute="leading" secondItem="15h-I0-Cyf" secondAttribute="leading" constant="20" id="E2n-6o-22L"/>
+                                    <constraint firstItem="O5D-hO-nrh" firstAttribute="height" secondItem="15h-I0-Cyf" secondAttribute="height" id="EpS-gs-aMb"/>
                                     <constraint firstItem="opn-WE-viW" firstAttribute="centerY" secondItem="15h-I0-Cyf" secondAttribute="centerY" id="S9B-jf-mVz"/>
                                 </constraints>
                             </view>
@@ -190,10 +208,19 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02i-bN-gA2">
+                                        <rect key="frame" x="0.0" y="0.0" width="12" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="mL3-uw-p3p"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="02i-bN-gA2" firstAttribute="leading" secondItem="uWe-HU-SHp" secondAttribute="leading" id="0n5-B0-kME"/>
                                     <constraint firstAttribute="height" constant="30" id="Gjx-7P-NmX"/>
+                                    <constraint firstItem="02i-bN-gA2" firstAttribute="height" secondItem="uWe-HU-SHp" secondAttribute="height" id="Wct-sk-wU4"/>
                                     <constraint firstItem="drv-Dg-8c9" firstAttribute="leading" secondItem="uWe-HU-SHp" secondAttribute="leading" constant="20" id="Y2E-42-OU9"/>
                                     <constraint firstItem="drv-Dg-8c9" firstAttribute="centerY" secondItem="uWe-HU-SHp" secondAttribute="centerY" id="ovi-jm-SFm"/>
                                 </constraints>
