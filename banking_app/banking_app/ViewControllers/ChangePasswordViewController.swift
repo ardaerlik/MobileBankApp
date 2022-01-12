@@ -43,6 +43,8 @@ class ChangePasswordViewController: UIViewController {
     }
     
     @IBAction func changePassword(_ sender: Any) {
+        dismissKeyboard()
+        
         if oldPasswordTextField.text!.isEmpty || newPasswordTextField.text!.isEmpty {
             self.errorLabel.textColor = .red
             self.errorLabel.text = AppError.emptyInput.rawValue
@@ -97,7 +99,6 @@ class ChangePasswordViewController: UIViewController {
     }
     
     @objc private func dismissKeyboardAndChangePassword() {
-        self.view.endEditing(true)
         changePassword(self)
     }
     

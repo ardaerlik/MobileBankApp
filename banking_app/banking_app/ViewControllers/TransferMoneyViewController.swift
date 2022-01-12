@@ -49,6 +49,8 @@ class TransferMoneyViewController: UIViewController {
     }
 
     @IBAction func makeTransferButtonTouched(_ sender: Any) {
+        dismissKeyboard()
+        
         if receiverTcknTextField.text!.isEmpty || receiverAccountIbanTextField.text!.isEmpty || transferAmountTextField.text!.isEmpty {
             self.transferErrorLabel.textColor = .red
             self.transferErrorLabel.text = AppError.emptyInput.rawValue
@@ -83,21 +85,31 @@ class TransferMoneyViewController: UIViewController {
         let barForIban = UIToolbar()
         let barForTckn = UIToolbar()
         let barForAmount = UIToolbar()
+        
         let nextButtonToTckn = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toTckn))
         let nextButtonToAmount = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toAmount))
         let previousButtonToTckn = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toTckn))
         let previousButtonToIban = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(toIban))
+        let previousButtonHidden = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(dismissKeyboard))
+        let nextButtonHidden = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(dismissKeyboard))
         let doneButton = UIBarButtonItem(title: "Make Transfer", style: .plain, target: self, action: #selector(dismissKeyboardAndMakeTransfer))
+        
         nextButtonToTckn.image = UIImage(systemName: "chevron.down")
         nextButtonToAmount.image = UIImage(systemName: "chevron.down")
         previousButtonToTckn.image = UIImage(systemName: "chevron.up")
         previousButtonToIban.image = UIImage(systemName: "chevron.up")
+        previousButtonHidden.image = UIImage(systemName: "chevron.up")
+        nextButtonHidden.image = UIImage(systemName: "chevron.down")
+        
+        previousButtonHidden.isEnabled = false
+        nextButtonHidden.isEnabled = false
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        barForIban.items = [nextButtonToTckn, flexSpace, flexSpace]
+        barForIban.items = [nextButtonToTckn, previousButtonHidden, flexSpace]
         barForTckn.items = [nextButtonToAmount, previousButtonToIban, flexSpace]
-        barForAmount.items = [previousButtonToTckn, flexSpace, doneButton]
+        barForAmount.items = [nextButtonHidden, previousButtonToTckn, flexSpace, doneButton]
+        
         barForIban.sizeToFit()
         barForTckn.sizeToFit()
         barForAmount.sizeToFit()
@@ -117,7 +129,6 @@ class TransferMoneyViewController: UIViewController {
     }
     
     @objc private func dismissKeyboardAndMakeTransfer() {
-        self.view.endEditing(true)
         makeTransferButtonTouched(self)
     }
     
