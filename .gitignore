@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 # MacOS specific files
 .[dD][sS]_[sS]tore
+
+# Google-Service Info
+banking_app/banking_app/GoogleService-Info.plist
